@@ -74,29 +74,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <!-- <div class="carousel-item" style="background-image: url(assets/img/logos.jpg);">
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Convincing logo</h2>
-              <p>I ensure a convincing logo for you and/or your company that will last long and easy for your customers to memorize, which increases a positive relationship between you and them.</p>
-              <div class="text-center"><a href="#services" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div> -->
-
-        <!-- Slide 3
-        <div class="carousel-item" style="background-image: url(assets/img/banner.jpg);">  
-          <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-              <h2>Infinity Services</h2>
-              <p>Dedicated to providing almost all services needed to make your name known.</p>
-              <div class="text-center"><a href="#services" class="btn-get-started">Read More</a></div>
-            </div>
-          </div>
-        </div> -->
-
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -113,60 +90,6 @@
   </section>
 
   <main id="main">
-
-    <!-- ======= Services Section ======= -->
-    <!-- <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2><strong>Services offered</strong></h2>
-          <p>Our services are <i>but not limited to</i> a range of services to meet your needs.</p>
-        </div>
-
-        <div class="row">
-          <div class="member-img">
-        <img src="assets/img/ceo.jpg" class="img-fluid" alt="">
-        <div class="social">
-          <a href="https://x.com/el_verbuena"><i class="bi bi-twitter"></i></a>
-          <a href="https://www.facebook.com/roberto.cresswell.33"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.instagram.com/el_verbuena_k2/"><i class="bi bi-instagram"></i></a>
-          <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-         
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-              <div class="icon"><i class="bi bi-tools"></i></div>
-              <h4 class="title"><a href="">Vehicle Maintenance</a></h4>
-              <p class="description">Expert vehicle maintenance and repair services.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-              <div class="icon"><i class="bi bi-battery-charging"></i></div>
-              <h4 class="title"><a href="">Battery Charging</a></h4>
-              <p class="description">Battery charging and replacement services.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-              <div class="icon"><i class="bi bi-gear"></i></div>
-              <h4 class="title"><a href="">Oil Change</a></h4>
-              <p class="description">Quick and efficient oil change services.</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="fade-up" data-aos-delay="500">
-              <div class="icon"><i class="bi bi-check-circle"></i></div>
-              <h4 class="title"><a href="">Quality Assurance</a></h4>
-              <p class="description">I ensure the highest quality in all our services.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section> -->
-
 
     <!-- About Section -->
 <section id="about" class="team section-bg">
@@ -368,12 +291,6 @@
           </div>
         </div>
 
-        <!-- <div class="progress">
-          <span class="skill">Adobe premier Pro <i class="val">80%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div> -->
         <div class="progress">
           <span class="skill">Social media platforms management <i class="val">70%</i></span>
           <div class="progress-bar-wrap">
@@ -388,30 +305,6 @@
         </div>
       </div>
 
-      <!-- <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="progress">
-          <span class="skill">Regulatory Compliance <i class="val">90%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-
-        <div class="progress">
-          <span class="skill">Safety Management <i class="val">88%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-
-        <div class="progress">
-          <span class="skill">Sustainability Practices <i class="val">70%</i></span>
-          <div class="progress-bar-wrap">
-            <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
-
-      </div> -->
 
     </div>
 
@@ -428,28 +321,14 @@
     </div>
 
     <div class="row">
-
-      <div class="col-lg-6" data-aos="fade-up">
-        <div class="testimonial-item">
-          <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
-          <h3>HITIMANA Gabriel</h3>
-          <h4>CEO & Founder, Energy Solutions Ltd.</h4>
-          <p>
-            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            “The innovative solutions provided by this team have significantly optimized our operations. Their expertise in petroleum technology and commitment to excellence are truly commendable. We’ve seen measurable improvements in efficiency and safety.”
-            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-        </div>
-      </div>
-
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
         <div class="testimonial-item mt-4 mt-lg-0">
           <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
-          <h3>UWAMUNGU Wilsson</h3>
-          <h4>Lead Engineer, PetroTech Solutions</h4>
+          <h3>IZERE HIRWA Roger</h3>
+          <h4>Co-Founder & CTO, HDEV Tech Ltd</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            “Working with this team has been a game-changer for our projects. Their deep understanding of petroleum processes and their ability to provide tailored solutions have greatly contributed to our success in the industry.”
+            “EL-VERBUENA has been an incredible asset to HDEV Ltd. over the past three months. Their creativity, attention to detail, and ability to deliver top-notch designs under tight deadlines have significantly elevated our brand’s visual presence.”
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
@@ -458,11 +337,11 @@
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
         <div class="testimonial-item mt-4">
           <!-- <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt=""> -->
-          <h3>Karenzi Charles</h3>
-          <h4>Operations Manager, Global Petroleum Inc.</h4>
+          <h3>UWAYEZU Jean Felix</h3>
+          <h4>Chief Executive Officer, JF Tech Ltd.</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            “The professionalism and expertise displayed by this team are outstanding. Their innovative approach to petroleum management has provided us with efficient and sustainable solutions that align with our goals.”
+            “Working with EL-VERBUENA has been a truly transformative experience at JF Tech. Their exceptional creativity, attention to detail, and ability to translate complex ideas into visually compelling designs have been invaluable to our brand.”
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
         </div>
@@ -533,10 +412,6 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <!-- <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
               </div> -->
               <button type="submit" name="send" class="btn btn-primary">Send Message</button>
             </form>
@@ -551,51 +426,6 @@
 
   <!-- ======= Footer ======= -->
 <footer id="footer">
-
-  <!-- <div class="footer-top">
-    <div class="container">
-      <div class="row" style="content-align: center">
-
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <img src="assets/img/logo.png" alt="" height="100px">
-          <h3>EL-VERBUENA</h3>
-          <p>
-            Kigali, Rwanda <br><br>
-            <strong>Phone:</strong> +250 789 492 390 / +250 789 438 711<br>
-            <strong>Email:</strong> robertscresswell@gmail.com<br>
-          </p>
-        </div> -->
-
-        <!-- <div class="col-lg-2 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#about">About Us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#contact">Talk to us</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Services at the station</h4>
-          <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Fuel Supply</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Car Wash</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Vehicle Maintenance</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Battery Charging</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Oil Change</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-6 footer-newsletter">
-          <h4>Join Our Newsletter</h4>
-          <p>Stay updated with our latest services and offers. Sign up for our newsletter.</p>
-          <form action="" method="post">
-            <input type="email" name="email" placeholder="Your Email">
-            <input type="submit" value="Subscribe">
-          </form>
-        </div> -->
-
       </div>
     </div>
   </div>
