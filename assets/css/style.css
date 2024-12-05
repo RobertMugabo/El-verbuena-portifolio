@@ -2195,4 +2195,66 @@ section {
   text-decoration: none;
   align-items: center;
 }
+/* Base styles remain the same */
+
+/* Large devices (desktops) */
+@media (min-width: 1200px) {
+  #hero .carousel-content h2 {
+    font-size: 42px;
+  }
+  
+  #hero .carousel-content p {
+    font-size: 18px;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #hero .carousel-content h2 {
+    font-size: 32px;
+  }
+  
+  #hero .carousel-content p {
+    font-size: 16px;
+  }
+}
+
+/* Small devices (landscape phones) */
+@media (min-width: 576px) and (max-width: 767px) {
+  #hero .carousel-content h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+  
+  #hero .carousel-content p {
+    font-size: 15px;
+  }
+}
+
+/* Extra small devices (phones) */
+@media (max-width: 575px) {
+  #hero .carousel-content h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  #hero .carousel-content p {
+    font-size: 14px;
+  }
+}
+
+/* Height adjustments */
+@media (max-height: 500px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
 

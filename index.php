@@ -59,7 +59,7 @@
   </header>
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero">
+  <section id="hero" style="width: 100%;">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
       <div class="carousel-inner" role="listbox">
@@ -177,10 +177,10 @@
     </div>
 
     <div class="row">
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" >
     <div class="member" data-aos="fade-up">
       <div class="member-img">
-        <img src="assets/img/ceo.jpg" class="img-fluid" alt="">
+        <img src="assets/img/me.jpg" class="img-fluid" alt="">
         <div class="social">
           <a href="https://x.com/el_verbuena"><i class="bi bi-twitter"></i></a>
           <a href="https://www.facebook.com/roberto.cresswell.33"><i class="bi bi-facebook"></i></a>
@@ -202,7 +202,7 @@
           
         </div>
       </div>
-      <div class="member-info" id="member-info" style="width:600px;">
+      <div class="member-info" id="member-info">
         <h2><strong>About me.</strong></h2><br><br>
         <h4 style="text-align:left;font-weight: 300;">A passionate and detail-oriented graphic designer and a UI designer born <strong style="font-weight: 600;">Robert MUGABO</strong> professionally known as <strong style="font-weight: 600;">EL-VERBUENA</strong> based in Kigali, Rwanda. With a strong foundation in visual communication and years of hands-on experience, Specialized in creating designs that are not only visually captivating but also strategically effective.
 
@@ -230,7 +230,7 @@
     </div>
 
   <div class="row">
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" >
     <div class="member" data-aos="fade-up">
       <div class="member-img">
         <img src="assets/img/forlogo.jpg" class="img-fluid" alt="">
@@ -246,7 +246,7 @@
   </div>
 
   
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" >
     <div class="member" data-aos="fade-up">
       <div class="member-img">
         <img src="assets/img/forbusiness.jpg" class="img-fluid" alt="">
@@ -261,7 +261,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
     <div class="member" data-aos="fade-up">
       <div class="member-img">
         <img src="assets/img/forflyer.jpg" class="img-fluid" alt="">
@@ -276,7 +276,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
     <div class="member" data-aos="fade-up">
       <div class="member-img">
         <img src="assets/img/songcover.jpg" class="img-fluid" alt="">
@@ -291,7 +291,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
     <div class="member" data-aos="fade-up">
       <div class="member-img">
         <img src="assets/img/home.jpg" class="img-fluid" alt="">
@@ -306,7 +306,7 @@
     </div>
   </div>
 
-  <div class="col-lg-3 col-md-6 d-flex align-items-stretch" style="margin-left:150px;">
+  <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
     <div class="member" data-aos="fade-up">
       <div class="member-img">
         <img src="assets/img/package.jpg" class="img-fluid" alt="">
@@ -338,7 +338,7 @@
 
     <div class="row skills-content">
 
-      <div class="col-lg-6" data-aos="fade-up" style="margin-left:400px;">
+      <div class="col-lg-6" data-aos="fade-up">
 
         <div class="progress">
           <span class="skill">Adobe Photoshop <i class="val">95%</i></span>
