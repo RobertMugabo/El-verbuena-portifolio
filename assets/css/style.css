@@ -15,7 +15,7 @@ body {
 }
 
 a {
-  color: #01CBAE;
+  color: #ef3d01;
   text-decoration: none;
 }
 
@@ -57,7 +57,7 @@ h6 {
 }
 
 .back-to-top:hover {
-  background: #01CBAE;
+  background: #ef3d01;
   color: #fff;
 }
 
@@ -101,7 +101,7 @@ h6 {
 }
 
 #topbar .contact-info i a:hover {
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 #topbar .social-links a {
@@ -112,7 +112,7 @@ h6 {
 }
 
 #topbar .social-links a:hover {
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 /*--------------------------------------------------------------
@@ -123,7 +123,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #3f3f3f;
+  background: #ef3d01;
 }
 
 #header.fixed-top {
@@ -207,7 +207,7 @@ h6 {
 
 .navbar .getstarted,
 .navbar .getstarted:focus {
-  background: #01CBAE;
+  background: #ef3d01;
   padding: 8px 20px;
   margin-left: 30px;
   border-radius: 4px;
@@ -582,7 +582,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #3f3f3f;
+  background: #ef3d01;
   min-height: 40px;
 }
 
@@ -602,7 +602,7 @@ section {
 }
 
 .breadcrumbs ol a {
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 .breadcrumbs ol li+li {
@@ -853,7 +853,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-links a:hover {
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 .portfolio .portfolio-item:hover .portfolio-info {
@@ -1149,7 +1149,7 @@ section {
 }
 
 .features .nav-link:hover {
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 .features .nav-link h4 {
@@ -1164,7 +1164,7 @@ section {
 
 .features .nav-link.active {
   box-shadow: 0px 0 15px rgba(0, 0, 0, 0.12);
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 .features .tab-pane.active {
@@ -1367,7 +1367,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #01CBAE;
+  color: #ef3d01;
   font-size: 26px;
 }
 
@@ -1404,7 +1404,7 @@ section {
 
 .contact .info i {
   font-size: 20px;
-  color: #01CBAE;
+  color: #ef3d01;
   float: left;
   width: 44px;
   height: 44px;
@@ -1432,7 +1432,7 @@ section {
 }
 
 .contact .info:hover i {
-  background: #01CBAE;
+  background: #ef3d01;
   color: #fff;
 }
 
@@ -1513,7 +1513,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #3f3f3f;
+  background: #ef3d01;
 }
 
 @keyframes animate-loading {
@@ -1612,7 +1612,7 @@ section {
 }
 
 .blog .entry .entry-content .read-more a:hover {
-  background: #3f3f3f;
+  background: #ef3d01;
 }
 
 .blog .entry .entry-content h3 {
@@ -1940,7 +1940,7 @@ section {
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: #3f3f3f;
+  background: #ef3d01;
 }
 
 .blog .sidebar .categories ul {
@@ -2091,7 +2091,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #01CBAE;
+  color: #ef3d01;
   font-size: 18px;
   line-height: 1;
 }
@@ -2115,7 +2115,7 @@ section {
 
 #footer .footer-top .footer-links ul a:hover {
   text-decoration: none;
-  color: #01CBAE;
+  color: #ef3d01;
 }
 
 #footer .footer-newsletter {
@@ -2154,7 +2154,7 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #01CBAE;
+  background: #ef3d01;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -2176,7 +2176,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #01CBAE;
+  background: #ef3d01;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
