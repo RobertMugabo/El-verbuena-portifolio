@@ -79,7 +79,7 @@ h6 {
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #5249B4;
+  background: #ef3d01;
   padding: 10px 0;
   font-size: 14px;
 }
@@ -123,7 +123,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #5524B3;
+  background: #3f3f3f;
 }
 
 #header.fixed-top {
@@ -436,7 +436,7 @@ h6 {
   padding: 20px;
   color: #fff;
   animation-duration: 0.5s;
-  border-top: 5px solid #5249B4;
+  border-top: 5px solid #ef3d01;
 }
 
 #hero .carousel-content h2 {
@@ -459,11 +459,11 @@ h6 {
   margin: 10px;
   color: #fff;
   animation-delay: 0.8s;
-  border: 2px solid #5249B4;
+  border: 2px solid #ef3d01;
 }
 
 #hero .btn-get-started:hover {
-  background: #5249B4;
+  background: #ef3d01;
   color: #fff;
   text-decoration: none;
 }
@@ -566,7 +566,7 @@ section {
   font-weight: 300;
   margin-bottom: 20px;
   padding-bottom: 0;
-  color: #5249B4;
+  color: #ef3d01;
 }
 
 .section-title h2 strong {
@@ -582,7 +582,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #5524B3;
+  background: #3f3f3f;
   min-height: 40px;
 }
 
@@ -665,13 +665,13 @@ section {
   transition: 0.4s;
   margin: 10px;
   border-radius: 4px;
-  border: 2px solid #5249B4;
-  color: #5249B4;
+  border: 2px solid #ef3d01;
+  color: #ef3d01;
   background: #fff;
 }
 
 .cta .cta-btn:hover {
-  background: #5249B4;
+  background: #ef3d01;
   color: #fff;
 }
 
@@ -780,7 +780,7 @@ section {
 .portfolio #portfolio-flters li:hover,
 .portfolio #portfolio-flters li.filter-active {
   color: #fff;
-  background: #5249B4;
+  background: #ef3d01;
 }
 
 .portfolio #portfolio-flters li:last-child {
@@ -1058,7 +1058,7 @@ section {
 }
 
 .team .member .social a:hover {
-  color: #5249B4;
+  color: #ef3d01;
 }
 
 .team .member .social i {
@@ -1204,7 +1204,7 @@ section {
 
 .pricing h4 {
   font-size: 42px;
-  color: #5249B4;
+  color: #ef3d01;
   font-weight: 500;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
@@ -1265,7 +1265,7 @@ section {
 }
 
 .pricing .featured {
-  background: #5249B4;
+  background: #ef3d01;
   box-shadow: none;
 }
 
@@ -1318,13 +1318,13 @@ section {
   transition: 0.4s;
   margin: 10px;
   border-radius: 4px;
-  border: 2px solid #5249B4;
-  color: #5249B4;
+  border: 2px solid #ef3d01;
+  color: #ef3d01;
   background: #fff;
 }
 
 .cta-pricing .cta-btn:hover {
-  background: #5249B4;
+  background: #ef3d01;
   color: #fff;
 }
 
@@ -1504,7 +1504,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #5249B4;
+  background: #ef3d01;
   border: 0;
   padding: 10px 24px;
   color: #fff;
@@ -1513,7 +1513,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #5524B3;
+  background: #3f3f3f;
 }
 
 @keyframes animate-loading {
@@ -1603,7 +1603,7 @@ section {
 
 .blog .entry .entry-content .read-more a {
   display: inline-block;
-  background: #5249B4;
+  background: #ef3d01;
   color: #fff;
   padding: 6px 20px;
   transition: 0.3s;
@@ -1612,7 +1612,7 @@ section {
 }
 
 .blog .entry .entry-content .read-more a:hover {
-  background: #5524B3;
+  background: #3f3f3f;
 }
 
 .blog .entry .entry-content h3 {
@@ -1877,7 +1877,7 @@ section {
 
 .blog .blog-pagination li.active,
 .blog .blog-pagination li:hover {
-  background: #5249B4;
+  background: #ef3d01;
 }
 
 .blog .blog-pagination li.active a,
@@ -1928,7 +1928,7 @@ section {
   font-size: 16px;
   padding: 0 15px;
   margin: -1px;
-  background: #5249B4;
+  background: #ef3d01;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
@@ -1940,7 +1940,7 @@ section {
 }
 
 .blog .sidebar .search-form form button:hover {
-  background: #5524B3;
+  background: #3f3f3f;
 }
 
 .blog .sidebar .categories ul {
@@ -2024,8 +2024,8 @@ section {
 
 .blog .sidebar .tags ul a:hover {
   color: #fff;
-  border: 1px solid #5249B4;
-  background: #5249B4;
+  border: 1px solid #ef3d01;
+  background: #ef3d01;
 }
 
 .blog .sidebar .tags ul a span {
@@ -2040,12 +2040,12 @@ section {
 #footer {
   color: #b4aca8;
   font-size: 14px;
-  background: #5524B3;
+  background: #3f3f3f;
 }
 
 #footer .footer-top {
   padding: 60px 0 30px 0;
-  background: #5249B4;
+  background: #ef3d01;
 }
 
 #footer .footer-top .footer-contact {
