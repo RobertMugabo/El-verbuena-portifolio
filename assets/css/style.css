@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #0EFACC;
+  color: #ef3d01;
   text-decoration: none;
 }
 
@@ -123,7 +123,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
-  background: #ef3d01;
+  background: #ffff;
 }
 
 #header.fixed-top {
@@ -1127,7 +1127,7 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #20B2A6;
+  background-color: #ef3d01;
 }
 
 /*--------------------------------------------------------------
