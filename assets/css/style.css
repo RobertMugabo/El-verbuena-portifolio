@@ -43,7 +43,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #20B2A6;
+  background: #c93200;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -86,7 +86,7 @@ h6 {
 
 #topbar .contact-info i {
   font-style: normal;
-  color: #20B2A6;
+  color: #c93200;
 }
 
 #topbar .contact-info i a,
@@ -202,7 +202,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: #0EFACC;
+  color: #c93200;
 }
 
 .navbar .getstarted,
@@ -217,7 +217,7 @@ h6 {
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
-  background: #0EFACC;
+  background: #c93200;
 }
 
 .navbar .dropdown ul {
@@ -645,7 +645,7 @@ section {
 }
 
 .cta h3 span {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .cta p {
@@ -716,7 +716,7 @@ section {
   text-align: center;
   width: 72px;
   height: 72px;
-  background: #20B2A6;
+  background: #c93200;
 }
 
 .services .icon i {
@@ -738,15 +738,15 @@ section {
 
 .services .icon-box:hover .icon {
   background: #fff;
-  border: 2px solid #20B2A6;
+  border: 2px solid #c93200;
 }
 
 .services .icon-box:hover .icon i {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .services .icon-box:hover .title a {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .services .description {
@@ -827,7 +827,7 @@ section {
 
 .portfolio .portfolio-item .portfolio-info .preview-link:hover,
 .portfolio .portfolio-item .portfolio-info .details-link:hover {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .portfolio .portfolio-item .portfolio-info .details-link {
@@ -882,11 +882,11 @@ section {
   height: 12px;
   background-color: #fff;
   opacity: 1;
-  border: 1px solid #20B2A6;
+  border: 1px solid #c93200;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #20B2A6;
+  background-color: #c93200;
 }
 
 .portfolio-details .portfolio-info {
@@ -986,7 +986,7 @@ section {
 .about-us .content .icon-box i {
   font-size: 48px;
   float: left;
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .about-us .content .icon-box p {
@@ -1260,8 +1260,8 @@ section {
 }
 
 .pricing .btn-buy:hover {
-  color: #20B2A6;
-  border-color: #20B2A6;
+  color: #c93200;
+  border-color: #c93200;
 }
 
 .pricing .featured {
@@ -1558,7 +1558,7 @@ section {
 }
 
 .blog .entry .entry-title a:hover {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .blog .entry .entry-meta {
@@ -1667,7 +1667,7 @@ section {
 }
 
 .blog .entry .entry-footer a:hover {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .blog .entry .entry-footer .cats {
@@ -1776,7 +1776,7 @@ section {
 }
 
 .blog .blog-comments .comment h5 a:hover {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .blog .blog-comments .comment h5 .reply {
@@ -1958,7 +1958,7 @@ section {
 }
 
 .blog .sidebar .categories ul a:hover {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .blog .sidebar .categories ul a span {
@@ -1988,7 +1988,7 @@ section {
 }
 
 .blog .sidebar .recent-posts h4 a:hover {
-  color: #20B2A6;
+  color: #c93200;
 }
 
 .blog .sidebar .recent-posts time {
