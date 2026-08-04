@@ -1,0 +1,116 @@
+{
+  "HomePage": {
+    "nav": {
+      "about": "A propos",
+      "services": "Services",
+      "skills": "Competences",
+      "work": "Projets",
+      "testimonials": "Temoignages",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Portfolio de design graphique et UI",
+      "description": "EL-VERBUENA aide les entreprises, artistes et fondateurs a communiquer clairement grace au branding, au design digital et a des visuels a fort impact.",
+      "primaryCta": "Voir Mes Projets",
+      "secondaryCta": "Me Contacter",
+      "imageAlt": "Realisation creative mise en avant par EL-VERBUENA"
+    },
+    "about": {
+      "eyebrow": "A propos",
+      "title": "Une direction creative fondee sur la clarte, la qualite et la coherence.",
+      "imageAlt": "Portrait de Mugabo Robert",
+      "name": "MUGABO Robert",
+      "role": "Graphic Designer et UI Designer",
+      "paragraph1": "Je suis un graphic designer et UI designer passionne, soigneux dans les details, connu professionnellement sous le nom de EL-VERBUENA et base a Kigali, au Rwanda.",
+      "paragraph2": "Mon travail se concentre sur les identites de marque, les visuels promotionnels, les interfaces numeriques et les supports creatifs qui aident mes clients a paraitre professionnels et memorables.",
+      "paragraph3": "J'associe narration visuelle et reflexion pratique en design afin que chaque projet soit attractif, efficace et aligne avec les objectifs du client.",
+      "closing": "Collaborons pour donner vie a votre vision."
+    },
+    "services": {
+      "eyebrow": "Ce Que Je Fais",
+      "title": "Des services de design penses pour un impact concret.",
+      "description": "Je propose une large gamme de services de design visuel pour les marques, les campagnes, les produits et les experiences digitales.",
+      "items": {
+        "logo": {
+          "title": "Creation de Logos",
+          "description": "Des logos memorables concus pour renforcer la reconnaissance et offrir a votre marque une identite durable."
+        },
+        "cards": {
+          "title": "Cartes de Visite et de Service",
+          "description": "Des cartes propres et premium qui presentent votre marque avec professionnalisme a chaque contact."
+        },
+        "flyers": {
+          "title": "Flyers, Affiches et Bannieres",
+          "description": "Des visuels promotionnels accrocheurs crees pour transmettre rapidement le message et susciter l'action."
+        },
+        "covers": {
+          "title": "Pochettes de Chansons et Films",
+          "description": "Des couvertures qui capturent l'emotion, la personnalite et l'histoire en un seul regard."
+        },
+        "uiux": {
+          "title": "Design UI",
+          "description": "Des maquettes modernes pour sites web et applications, conciliant ergonomie et esthetique."
+        },
+        "package": {
+          "title": "Design de Packaging",
+          "description": "Des visuels de packaging qui ameliorent la presence en rayon et la coherence globale de la marque."
+        }
+      }
+    },
+    "skills": {
+      "eyebrow": "Mes Competences",
+      "title": "Les outils et points forts que j'utilise pour livrer un travail soigne.",
+      "description": "J'ameliore continuellement mes competences creatives et techniques pour soutenir le branding, le contenu et le design de produits numeriques."
+    },
+    "work": {
+      "eyebrow": "Projets Selectionnes",
+      "title": "Un portfolio de projets de branding, de campagne et d'interface.",
+      "description": "Ces realisations proviennent de missions clients en logo, flyer, cover art, packaging et design UI.",
+      "featuredAlt": "Projet portfolio EL-VERBUENA mis en avant",
+      "showcase": {
+        "logo": "Concepts de logos et identites finales developpes pour des startups, boutiques et marques tech.",
+        "cards": "Cartes de visite et de service adaptees a une presentation claire et une forte premiere impression.",
+        "flyers": "Affiches, visuels sociaux et creations de campagne pour evenements, promotions et annonces.",
+        "covers": "Visuels musicaux et cinematographiques crees pour exprimer une ambiance, un ton et une identite.",
+        "uiux": "Maquettes et ecrans UI pour des produits digitaux qui ont besoin de clarte et de style.",
+        "package": "Directions de packaging qui rendent les produits plus distinctifs, soignes et prets pour le marche."
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Avis Clients",
+      "title": "Ce que les clients disent de leur collaboration avec EL-VERBUENA.",
+      "description": "La qualite creative, la constance et la fiabilite expliquent pourquoi les clients recommandent ce travail.",
+      "items": {
+        "rogerRole": "Co-fondateur et CTO, HDEV Tech Ltd",
+        "rogerQuote": "EL-VERBUENA a ete un atout incroyable pour HDEV Ltd. Sa creativite, son attention aux details et sa capacite a livrer de tres bons designs dans des delais serres ont renforce notre presence visuelle.",
+        "felixRole": "Directeur general, JF Tech Ltd",
+        "felixQuote": "Travailler avec EL-VERBUENA a ete transformateur pour JF Tech. Sa capacite a traduire des idees complexes en visuels convaincants a apporte une vraie valeur a notre marque."
+      }
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Parlons de votre prochain projet de design.",
+      "description": "Contactez-moi pour le branding, un accompagnement design, une collaboration ou toute question sur mes services.",
+      "directTitle": "Contact Direct",
+      "locationTitle": "Localisation",
+      "locationValue": "Kigali, Rwanda",
+      "availabilityTitle": "Disponibilite",
+      "availabilityValue": "Disponible pour des missions freelance, des collaborations et des demandes de design.",
+      "note": "Les versions anglaise et francaise sont maintenant prises en charge, ce qui rend ce portfolio pret pour des visiteurs internationaux et un hebergement sur Vercel."
+    },
+    "footer": {
+      "copyright": "Copyright {year} EL-VERBUENA. Tous droits reserves."
+    }
+  },
+  "PortfolioPage": {
+    "eyebrow": "Categorie du Portfolio",
+    "backHome": "Retour au portfolio",
+    "galleryEyebrow": "Projets selectionnes",
+    "galleryTitle": "Voir la galerie",
+    "galleryDescription": "Un apercu plus detaille des projets realises dans cette categorie de design.",
+    "ctaButton": "Contacter EL-VERBUENA",
+    "moreEyebrow": "Autres Services",
+    "moreTitle": "Explorer d'autres categories",
+    "moreDescription": "Parcourez davantage de travaux de design dans cette experience portfolio sous Next.js."
+  }
+}
