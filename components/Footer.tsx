@@ -1,11 +1,8 @@
-'use client';
-
 import Image from 'next/image';
-import { useLocale, useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-export default function Footer() {
-  const locale = useLocale();
-  const t = useTranslations('HomePage');
+export default async function Footer({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
   const year = new Date().getFullYear();
 
   return (

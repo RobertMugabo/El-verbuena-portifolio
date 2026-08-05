@@ -50,7 +50,7 @@ export default async function AboutPage({ params }: Props) {
                 height={520}
                 className="ev-about-img"
                 priority
-                sizes="(max-width: 768px) 100vw,420px"
+                sizes="(max-width: 900px) 100vw, 420px"
               />
               <div className="ev-about-socials">
                 <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter-x" /></a>

@@ -44,7 +44,7 @@ export default async function BusinessCardPage({ params }: Props) {
           <div className="ev-gallery-grid">
             {cards.map(({ img, name, desc }, i) => (
               <div key={name} className="ev-gallery-item">
-                <Image src={img} alt={name} width={400} height={400} loading={i < 4 ? 'eager' : 'lazy'} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <Image src={img} alt={name} width={400} height={400} loading={i < 4 ? 'eager' : 'lazy'} sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div className="ev-gallery-caption">
                   <strong>{name}</strong>
                   <span>{desc}</span>

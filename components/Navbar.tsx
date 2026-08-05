@@ -43,7 +43,7 @@ export default function Navbar() {
     <header className="ev-header">
       <div className="ev-header-inner">
         <Link href={`/${locale}`} className="ev-logo" prefetch>
-          <Image src="/assets/img/logo.png" alt="EL-VERBUENA" width={44} height={44} priority />
+          <Image src="/assets/img/logo.png" alt="EL-VERBUENA" width={44} height={44} priority sizes="44px" />
           <span>EL-VERBUENA</span>
         </Link>
 
@@ -70,6 +70,7 @@ export default function Navbar() {
               width={22}
               height={16}
               unoptimized
+              loading="lazy"
             />
             <span>{locale === 'en' ? 'FR' : 'EN'}</span>
           </button>

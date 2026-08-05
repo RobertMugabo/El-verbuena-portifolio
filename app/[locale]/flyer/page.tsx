@@ -66,6 +66,7 @@ export default async function FlyerPage({ params }: Props) {
                   width={400}
                   height={400}
                   loading={i < 4 ? 'eager' : 'lazy'}
+                  sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>

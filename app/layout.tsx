@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const montserrat = Montserrat({
@@ -23,33 +24,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                const theme = localStorage.getItem('theme') || 'light';
-                document.documentElement.setAttribute('data-theme', theme);
-              })();
-            `,
+            __html: `(function(){var t=localStorage.getItem('theme')||'light';document.documentElement.setAttribute('data-theme',t);})();`,
           }}
         />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" href="/assets/img/logo.png" as="image" type="image/png" />
-        <link rel="preload" href="/assets/img/first.jpg" as="image" type="image/jpeg" />
-        <link
-          rel="stylesheet"
-          href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
-        />
-        <link
-          rel="stylesheet"
-          href="/assets/vendor/boxicons/css/boxicons.min.css"
-        />
-        <link
-          rel="stylesheet"
-          href="/assets/vendor/animate.css/animate.min.css"
-        />
+        <link rel="stylesheet" href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" />
+        <link rel="stylesheet" href="/assets/vendor/boxicons/css/boxicons.min.css" />
       </head>
       <body className={montserrat.className}>
         {children}
+        <Script src="/assets/vendor/animate.css/animate.min.css" strategy="lazyOnload" />
       </body>
     </html>
   );
