@@ -5,12 +5,24 @@ type Props = {
   label: string;
   title: string;
   desc: string;
+  isVideo?: boolean;
 };
 
-export default function PortfolioHero({ img, label, title, desc }: Props) {
+export default function PortfolioHero({ img, label, title, desc, isVideo }: Props) {
   return (
     <div className="ev-portfolio-hero">
-      <Image src={img} alt="" fill priority sizes="100vw" style={{ objectFit: 'cover' }} />
+      {isVideo ? (
+        <video
+          src={img}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      ) : (
+        <Image src={img} alt="" fill priority sizes="100vw" style={{ objectFit: 'cover' }} />
+      )}
       <div className="ev-portfolio-hero-overlay" />
       <div className="ev-portfolio-hero-content">
         <span className="ev-label">{label}</span>

@@ -6,7 +6,9 @@ export const serviceKeys = [
   "flyers",
   "covers",
   "uiux",
-  "package"
+  "package",
+  "bookcover",
+  "motion"
 ] as const;
 
 export type ServiceKey = (typeof serviceKeys)[number];
@@ -150,6 +152,25 @@ export const services = [
     samples: ["/assets/img/ff.png", "/assets/img/pack.png", "/assets/img/fff.png"],
     gallery: ["/assets/img/ff.png", "/assets/img/pack.png", "/assets/img/fff.png"],
     details: []
+  },
+  {
+    key: "bookcover",
+    href: "/work/bookcover",
+    image: "/assets/img/BeyondKnowledge_Book_Mockup_2.jpg",
+    heroImage: "/assets/img/BeyondKnowledge_Book_Mockup_2.jpg",
+    samples: ["/assets/img/BeyondKnowledge_Book_Mockup_2.jpg"],
+    gallery: ["/assets/img/BeyondKnowledge_Book_Mockup_2.jpg"],
+    details: []
+  },
+  {
+    key: "motion",
+    href: "/work/motion",
+    image: "/assets/img/Golden Ink_5.mp4",
+    heroImage: "/assets/img/Golden Ink_5.mp4",
+    samples: ["/assets/img/Golden Ink_5.mp4"],
+    gallery: ["/assets/img/Golden Ink_5.mp4"],
+    details: [],
+    isVideo: true
   }
 ] as const;
 
