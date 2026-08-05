@@ -47,7 +47,7 @@ export default async function AboutPage({ params }: Props) {
                 <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer"><IconTwitterX size={18} /></a>
                 <a href="https://www.facebook.com/roberto.cresswell.33" target="_blank" rel="noopener noreferrer"><IconFacebook size={18} /></a>
                 <a href="https://www.instagram.com/el_verbuena_k2/" target="_blank" rel="noopener noreferrer"><IconInstagram size={18} /></a>
-                <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" target="_blank" rel="noopener noreferrer"><IconLinkedin size={18} /></a>
+                <a href="https://www.linkedin.com/in/robert-mugabo-102102428/" target="_blank" rel="noopener noreferrer"><IconLinkedin size={18} /></a>
               </div>
             </div>
             <div className="ev-about-text">
@@ -79,7 +79,7 @@ export default async function AboutPage({ params }: Props) {
             sameAs: [
               'https://x.com/el_verbuena',
               'https://www.instagram.com/el_verbuena_k2/',
-              'https://www.linkedin.com/in/mugabo-robert-7647a428b/',
+              'https://www.linkedin.com/in/robert-mugabo-102102428/',
               'https://www.facebook.com/roberto.cresswell.33',
             ],
           }),
