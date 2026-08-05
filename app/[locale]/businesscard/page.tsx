@@ -2,8 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import PortfolioHero from '@/components/PortfolioHero';
 
 type Props = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -27,14 +32,12 @@ export default async function BusinessCardPage({ params }: Props) {
 
   return (
     <>
-      <div className="ev-portfolio-hero" style={{ backgroundImage: "url('/assets/img/forbusiness.jpg')" }}>
-        <div className="ev-portfolio-hero-overlay" />
-        <div className="ev-portfolio-hero-content">
-          <span className="ev-label">Portfolio</span>
-          <h1>Business &amp; Service Cards</h1>
-          <p>Clean, premium card designs that help you present your brand professionally in every interaction.</p>
-        </div>
-      </div>
+      <PortfolioHero
+        img="/assets/img/forbusiness.jpg"
+        label="Portfolio"
+        title="Business & Service Cards"
+        desc="Clean, premium card designs that help you present your brand professionally in every interaction."
+      />
       <section className="ev-section">
         <div className="ev-container">
           <Link href={`/${locale}`} className="ev-back-link">← Back to Portfolio</Link>

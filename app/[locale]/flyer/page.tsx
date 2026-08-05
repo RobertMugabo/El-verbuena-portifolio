@@ -2,8 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import PortfolioHero from '@/components/PortfolioHero';
 
 type Props = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -43,14 +48,12 @@ export default async function FlyerPage({ params }: Props) {
 
   return (
     <>
-      <div className="ev-portfolio-hero" style={{ backgroundImage: "url('/assets/img/fff.png')" }}>
-        <div className="ev-portfolio-hero-overlay" />
-        <div className="ev-portfolio-hero-content">
-          <span className="ev-label">Portfolio</span>
-          <h1>Flyers, Posters &amp; Banners</h1>
-          <p>Attention-grabbing promotional visuals created to communicate fast and convert interest into action.</p>
-        </div>
-      </div>
+      <PortfolioHero
+        img="/assets/img/fff.png"
+        label="Portfolio"
+        title="Flyers, Posters & Banners"
+        desc="Attention-grabbing promotional visuals created to communicate fast and convert interest into action."
+      />
       <section className="ev-section">
         <div className="ev-container">
           <Link href={`/${locale}`} className="ev-back-link">← Back to Portfolio</Link>

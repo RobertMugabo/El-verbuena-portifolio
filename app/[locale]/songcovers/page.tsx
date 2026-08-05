@@ -2,8 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import PortfolioHero from '@/components/PortfolioHero';
 
 type Props = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -34,14 +39,12 @@ export default async function SongCoversPage({ params }: Props) {
 
   return (
     <>
-      <div className="ev-portfolio-hero" style={{ backgroundImage: "url('/assets/img/msc.png')" }}>
-        <div className="ev-portfolio-hero-overlay" />
-        <div className="ev-portfolio-hero-content">
-          <span className="ev-label">Portfolio</span>
-          <h1>Song &amp; Movie Covers</h1>
-          <p>Cover artwork that captures emotion, personality and story at a single glance.</p>
-        </div>
-      </div>
+      <PortfolioHero
+        img="/assets/img/msc.png"
+        label="Portfolio"
+        title="Song & Movie Covers"
+        desc="Cover artwork that captures emotion, personality and story at a single glance."
+      />
       <section className="ev-section">
         <div className="ev-container">
           <Link href={`/${locale}`} className="ev-back-link">← Back to Portfolio</Link>

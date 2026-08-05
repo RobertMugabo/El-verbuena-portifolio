@@ -5,6 +5,10 @@ import type { Metadata } from 'next';
 
 type Props = { params: Promise<{ locale: string }> };
 
+export async function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'HomePage' });

@@ -2,8 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import PortfolioHero from '@/components/PortfolioHero';
 
 type Props = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -33,14 +38,12 @@ export default async function LogoPage({ params }: Props) {
 
   return (
     <>
-      <div className="ev-portfolio-hero" style={{ backgroundImage: "url('/assets/img/logodesign10.png')" }}>
-        <div className="ev-portfolio-hero-overlay" />
-        <div className="ev-portfolio-hero-content">
-          <span className="ev-label">Portfolio</span>
-          <h1>Logo Design</h1>
-          <p>Memorable logo systems designed to strengthen recognition and give your brand a lasting identity.</p>
-        </div>
-      </div>
+      <PortfolioHero
+        img="/assets/img/logodesign10.png"
+        label="Portfolio"
+        title="Logo Design"
+        desc="Memorable logo systems designed to strengthen recognition and give your brand a lasting identity."
+      />
       <section className="ev-section">
         <div className="ev-container">
           <Link href={`/${locale}`} className="ev-back-link">← Back to Portfolio</Link>

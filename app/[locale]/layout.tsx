@@ -12,7 +12,7 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params,
+  params
 }: {
   children: ReactNode;
   params: Promise<{ locale: string }>;
@@ -26,9 +26,9 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <NextIntlClientProvider>
+    <NextIntlClientProvider locale={locale}>
       <Navbar />
-      {children}
+      <main>{children}</main>
       <Footer />
     </NextIntlClientProvider>
   );

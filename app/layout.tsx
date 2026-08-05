@@ -7,9 +7,11 @@ const montserrat = Montserrat({
   weight: ['400', '600', '700', '800', '900'],
   variable: '--font-montserrat',
   display: 'swap',
+  preload: true,
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://el-verbuena.vercel.app'),
   title: 'EL-VERBUENA | Graphic Design & UI Portfolio',
   description: 'EL-VERBUENA helps businesses, artists and founders communicate clearly through branding, digital design and high-impact visuals.',
   icons: { icon: '/assets/img/logo-1.png' },
@@ -30,6 +32,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preload" href="/assets/img/logo.png" as="image" type="image/png" />
+        <link rel="preload" href="/assets/img/first.jpg" as="image" type="image/jpeg" />
         <link
           rel="stylesheet"
           href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"

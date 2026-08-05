@@ -77,7 +77,8 @@ export default async function PortfolioPage({ params }: Props) {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="ev-hero" style={{ backgroundImage: "url('/assets/img/first.jpg')" }}>
+      <section className="ev-hero">
+        <Image src="/assets/img/first.jpg" alt="" fill priority sizes="100vw" style={{ objectFit: 'cover' }} />
         <div className="ev-hero-overlay" />
         <div className="ev-hero-content">
           <p className="ev-hero-eyebrow">Graphic Design &amp; UI</p>

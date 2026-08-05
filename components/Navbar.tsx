@@ -3,12 +3,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { usePathname } from 'next/navigation';
+import { useRouter, usePathname } from '@/i18n/navigation';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const t = useTranslations('HomePage');
   const locale = useLocale();
+  const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
@@ -27,9 +28,7 @@ export default function Navbar() {
 
   const switchLocale = () => {
     const next = locale === 'en' ? 'fr' : 'en';
-    const segments = pathname.split('/');
-    segments[1] = next;
-    window.location.href = segments.join('/');
+    router.replace(pathname, { locale: next });
   };
 
   const navLinks = [
