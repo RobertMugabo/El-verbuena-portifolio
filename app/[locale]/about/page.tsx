@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import Script from 'next/script';
 import type { Metadata } from 'next';
+import { IconTwitterX, IconFacebook, IconInstagram, IconLinkedin } from '@/components/Icons';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -53,10 +54,10 @@ export default async function AboutPage({ params }: Props) {
                 sizes="(max-width: 900px) 100vw, 420px"
               />
               <div className="ev-about-socials">
-                <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter-x" /></a>
-                <a href="https://www.facebook.com/roberto.cresswell.33" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook" /></a>
-                <a href="https://www.instagram.com/el_verbuena_k2/" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram" /></a>
-                <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin" /></a>
+                <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer"><IconTwitterX size={18} /></a>
+                <a href="https://www.facebook.com/roberto.cresswell.33" target="_blank" rel="noopener noreferrer"><IconFacebook size={18} /></a>
+                <a href="https://www.instagram.com/el_verbuena_k2/" target="_blank" rel="noopener noreferrer"><IconInstagram size={18} /></a>
+                <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" target="_blank" rel="noopener noreferrer"><IconLinkedin size={18} /></a>
               </div>
             </div>
             <div className="ev-about-text">

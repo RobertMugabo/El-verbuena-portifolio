@@ -892,6 +892,3 @@ i, .bi, .bx {
   transition: var(--transition);
 }
 .ev-back-link:hover { gap: 12px; }
-
-/* ── ANIMATE.CSS COMPAT ── */
-.animate__animated { animation-duration: 0.8s; }

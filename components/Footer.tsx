@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getTranslations } from 'next-intl/server';
+import { IconEnvelope, IconPhone, IconWhatsapp, IconTwitterX, IconFacebook, IconInstagram, IconLinkedin } from './Icons';
 
 export default async function Footer({ locale }: { locale: string }) {
   const t = await getTranslations({ locale, namespace: 'HomePage' });
@@ -17,19 +18,19 @@ export default async function Footer({ locale }: { locale: string }) {
         <div className="ev-footer-contact">
           <h4>{t('footer.contact')}</h4>
           <a href="mailto:robertscresswell@gmail.com">
-            <i className="bi bi-envelope" />
+            <IconEnvelope size={16} />
             <span>robertscresswell@gmail.com</span>
           </a>
           <a href="tel:+250789492390">
-            <i className="bi bi-phone" />
+            <IconPhone size={16} />
             <span>+250 789 492 390</span>
           </a>
           <a href="tel:+250789438711">
-            <i className="bi bi-phone" />
+            <IconPhone size={16} />
             <span>+250 789 438 711</span>
           </a>
           <a href="https://wa.me/250789492390" target="_blank" rel="noopener noreferrer">
-            <i className="bi bi-whatsapp" />
+            <IconWhatsapp size={16} />
             <span>+250 789 492 390</span>
           </a>
         </div>
@@ -37,16 +38,16 @@ export default async function Footer({ locale }: { locale: string }) {
           <h4>{t('footer.follow')}</h4>
           <div className="ev-footer-social-links">
             <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <i className="bx bxl-twitter" />
+              <IconTwitterX size={16} />
             </a>
             <a href="https://www.facebook.com/roberto.cresswell.33" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <i className="bx bxl-facebook" />
+              <IconFacebook size={16} />
             </a>
             <a href="https://www.instagram.com/el_verbuena_k2/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-              <i className="bx bxl-instagram" />
+              <IconInstagram size={16} />
             </a>
             <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i className="bx bxl-linkedin" />
+              <IconLinkedin size={16} />
             </a>
           </div>
         </div>

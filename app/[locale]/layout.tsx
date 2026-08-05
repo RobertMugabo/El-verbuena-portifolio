@@ -25,10 +25,11 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const nav = (messages as any).HomePage?.nav;
 
   return (
-    <NextIntlClientProvider locale={locale} messages={messages}>
-      <Navbar />
+    <NextIntlClientProvider locale={locale} messages={{ HomePage: { nav } }}>
+      <Navbar locale={locale} translations={{ nav }} />
       <main>{children}</main>
       <Footer locale={locale} />
     </NextIntlClientProvider>

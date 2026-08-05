@@ -1,5 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { IconQuote } from '@/components/Icons';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -36,7 +37,7 @@ export default async function TestimonialsPage({ params }: Props) {
         </div>
         <div className="ev-testimonials-grid">
           <div className="ev-testimonial-card">
-            <i className="bx bxs-quote-alt-left ev-quote-icon" />
+            <IconQuote size={32} className="ev-quote-icon" />
             <p>"{t('testimonials.items.rogerQuote')}"</p>
             <div className="ev-testimonial-author">
               <strong>IZERE HIRWA Roger</strong>
@@ -44,7 +45,7 @@ export default async function TestimonialsPage({ params }: Props) {
             </div>
           </div>
           <div className="ev-testimonial-card">
-            <i className="bx bxs-quote-alt-left ev-quote-icon" />
+            <IconQuote size={32} className="ev-quote-icon" />
             <p>"{t('testimonials.items.felixQuote')}"</p>
             <div className="ev-testimonial-author">
               <strong>UWAYEZU Jean Felix</strong>

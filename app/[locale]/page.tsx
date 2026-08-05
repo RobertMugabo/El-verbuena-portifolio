@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { IconArrowUp } from '@/components/Icons';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -40,16 +41,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     robots: { index: true, follow: true },
   };
 }
-
-const skills = [
-  { name: 'Adobe Photoshop', val: 95 },
-  { name: 'Adobe Illustrator', val: 85 },
-  { name: 'Adobe XD', val: 80 },
-  { name: 'Figma', val: 85 },
-  { name: 'Adobe After Effects', val: 70 },
-  { name: 'Content Creation', val: 85 },
-  { name: 'Social Media Management', val: 70 },
-];
 
 const services = [
   { key: 'logo', img: '/assets/img/EV.jpg', route: 'logo' },
@@ -124,7 +115,7 @@ export default async function PortfolioPage({ params }: Props) {
       </main>
 
       <a href="#" className="ev-back-top" aria-label="Back to top">
-        <i className="bi bi-arrow-up-short" />
+        <IconArrowUp size={22} />
       </a>
 
       {/* JSON-LD structured data for SEO */}
