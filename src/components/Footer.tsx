@@ -46,7 +46,7 @@ export default async function Footer({ locale }: { locale: string }) {
             <a href="https://www.instagram.com/el_verbuena_k2/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <IconInstagram size={16} />
             </a>
-            <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/robert-mugabo-102102428/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <IconLinkedin size={16} />
             </a>
           </div>
