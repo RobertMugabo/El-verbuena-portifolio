@@ -7,11 +7,15 @@ type Props = { params: Promise<{ locale: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
+  
   return {
-    title: locale === 'fr' ? 'Services | EL-VERBUENA' : 'Services | EL-VERBUENA',
+    title: locale === 'fr'
+      ? 'Services | EL-VERBUENA - Designer Graphique & UI'
+      : 'Services | EL-VERBUENA - Graphic Designer & UI Designer',
     description: locale === 'fr'
-      ? 'Services de design graphique et UI — logos, flyers, cartes, pochettes, packaging — EL-VERBUENA, Kigali Rwanda.'
-      : 'Graphic design and UI services — logos, flyers, cards, covers, packaging — EL-VERBUENA, Kigali Rwanda.',
+      ? 'Découvrez les services de design d\'EL-VERBUENA: création de logos, cartes de visite, flyers, pochettes, design UI et packaging pour les entreprises et artistes.'
+      : 'Discover EL-VERBUENA design services: logo design, business cards, flyers, covers, UI design, and packaging for businesses and artists.',
   };
 }
 
@@ -30,7 +34,7 @@ export default async function ServicesPage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return (
-    <section className="ev-section ev-section-alt" style={{ marginTop: 70 }}>
+    <section className="ev-section ev-section-alt">
       <div className="ev-container">
         <div className="ev-section-header">
           <span className="ev-label">{t('services.eyebrow')}</span>
@@ -41,13 +45,14 @@ export default async function ServicesPage({ params }: Props) {
           {services.map(({ key, img, route }, i) => (
             <Link key={key} href={`/${locale}/${route}`} className="ev-service-card" prefetch={false}>
               <div className="ev-service-img-wrap">
-                <Image
-                  src={img}
-                  alt={t(`services.items.${key}.title` as any)}
-                  width={400}
-                  height={280}
+                <Image 
+                  src={img} 
+                  alt={t(`services.items.${key}.title` as any)} 
+                  width={400} 
+                  height={280} 
                   className="ev-service-img"
-                  loading={i < 3 ? 'eager' : 'lazy'}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw,400px"
                 />
                 <div className="ev-service-overlay">
                   <span>{locale === 'en' ? 'View Work →' : 'Voir les projets →'}</span>

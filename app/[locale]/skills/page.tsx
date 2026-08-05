@@ -1,6 +1,21 @@
-'use client';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
 
-import { useTranslations } from 'next-intl';
+type Props = { params: Promise<{ locale: string }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
+  
+  return {
+    title: locale === 'fr'
+      ? 'Compétences | EL-VERBUENA - Designer Graphique & UI'
+      : 'Skills | EL-VERBUENA - Graphic Designer & UI Designer',
+    description: locale === 'fr'
+      ? 'Découvrez les compétences et outils d\'EL-VERBUENA: Adobe Photoshop, Illustrator, XD, Figma, After Effects, création de contenu et gestion des réseaux sociaux.'
+      : 'Discover EL-VERBUENA skills and tools: Adobe Photoshop, Illustrator, XD, Figma, After Effects, content creation, and social media management.',
+  };
+}
 
 const skills = [
   { name: 'Adobe Photoshop', val: 95 },
@@ -12,8 +27,10 @@ const skills = [
   { name: 'Social Media Management', val: 70 },
 ];
 
-export default function SkillsPage() {
-  const t = useTranslations('HomePage');
+export default async function SkillsPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return (
     <section className="ev-section">

@@ -102,7 +102,15 @@ export default async function PortfolioPage({ params }: Props) {
             <div className="ev-work-grid">
               {recentWork.map(({ img, alt }) => (
                 <div key={img} className="ev-work-item">
-                  <Image src={img} alt={alt} width={400} height={300} className="ev-work-img" loading="lazy" />
+                  <Image 
+                    src={img} 
+                    alt={alt} 
+                    width={400} 
+                    height={300} 
+                    className="ev-work-img" 
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw,400px"
+                  />
                   <div className="ev-work-hover"><span>{alt}</span></div>
                 </div>
               ))}

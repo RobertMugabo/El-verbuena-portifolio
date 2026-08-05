@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 
 const base = 'https://el-verbuena.vercel.app';
 const locales = ['en', 'fr'];
-const routes = ['', '/logo', '/businesscard', '/flyer', '/songcovers', '/ui', '/package'];
+const routes = ['', '/about', '/services', '/skills', '/testimonials', '/logo', '/businesscard', '/flyer', '/songcovers', '/ui', '/package'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

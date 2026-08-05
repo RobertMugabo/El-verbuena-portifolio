@@ -16,7 +16,6 @@ export default function Navbar() {
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
   }, []);
 
   const toggleTheme = () => {
@@ -34,11 +33,11 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { href: `/${locale}`, label: t('nav.home') },
-    { href: `/${locale}/about`, label: t('nav.about') },
-    { href: `/${locale}/services`, label: t('nav.services') },
-    { href: `/${locale}/skills`, label: t('nav.skills') },
-    { href: `/${locale}/testimonials`, label: t('nav.testimonials') },
+    { href: `/${locale}`, label: t('nav.home'), prefetch: true },
+    { href: `/${locale}/about`, label: t('nav.about'), prefetch: true },
+    { href: `/${locale}/services`, label: t('nav.services'), prefetch: true },
+    { href: `/${locale}/skills`, label: t('nav.skills'), prefetch: true },
+    { href: `/${locale}/testimonials`, label: t('nav.testimonials'), prefetch: true },
   ];
 
   return (
@@ -51,9 +50,9 @@ export default function Navbar() {
 
         <nav className={`ev-nav${menuOpen ? ' open' : ''}`}>
           {navLinks.map(link => (
-            <a key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+            <Link key={link.href} href={link.href} prefetch={link.prefetch} onClick={() => setMenuOpen(false)}>
               {link.label}
-            </a>
+            </Link>
           ))}
           <a href={`/${locale}#footer`} className="ev-nav-cta">
             {t('nav.getInTouch')}

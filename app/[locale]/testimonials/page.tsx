@@ -1,9 +1,26 @@
-'use client';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
 
-import { useTranslations } from 'next-intl';
+type Props = { params: Promise<{ locale: string }> };
 
-export default function TestimonialsPage() {
-  const t = useTranslations('HomePage');
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
+  
+  return {
+    title: locale === 'fr'
+      ? 'Témoignages | EL-VERBUENA - Designer Graphique & UI'
+      : 'Testimonials | EL-VERBUENA - Graphic Designer & UI Designer',
+    description: locale === 'fr'
+      ? 'Découvrez ce que les clients disent de leur collaboration avec EL-VERBUENA. Qualité créative, constance et fiabilité sont les raisons pour lesquelles les clients recommandent ce travail.'
+      : 'Discover what clients say about working with EL-VERBUENA. Creative quality, consistency and reliability are the reasons clients keep recommending this work.',
+  };
+}
+
+export default async function TestimonialsPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
 
   return (
     <section className="ev-section">
