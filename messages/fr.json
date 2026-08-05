@@ -9,22 +9,22 @@
       "contact": "Contact"
     },
     "hero": {
-      "title": "Portfolio de design graphique et UI",
-      "description": "EL-VERBUENA aide les entreprises, artistes et fondateurs a communiquer clairement grace au branding, au design digital et a des visuels a fort impact.",
-      "primaryCta": "Voir Mes Projets",
-      "secondaryCta": "Me Contacter",
-      "imageAlt": "Realisation creative mise en avant par EL-VERBUENA"
+      "title": "Design Graphique Creatif & UI",
+      "description": "EL-VERBUENA aide les entreprises, les artistes et les fondateurs a communiquer clairement grace au branding, au design numerique et a des visuels a fort impact.",
+      "primaryCta": "Voir mon travail",
+      "secondaryCta": "Me contacter",
+      "imageAlt": "Travail creatif en vedette EL-VERBUENA"
     },
     "about": {
       "eyebrow": "A propos",
-      "title": "Une direction creative fondee sur la clarte, la qualite et la coherence.",
+      "title": "Un design qui parle avant meme que vous ne disiez un mot.",
       "imageAlt": "Portrait de Mugabo Robert",
       "name": "MUGABO Robert",
-      "role": "Graphic Designer et UI Designer",
-      "paragraph1": "Je suis un graphic designer et UI designer passionne, soigneux dans les details, connu professionnellement sous le nom de EL-VERBUENA et base a Kigali, au Rwanda.",
-      "paragraph2": "Mon travail se concentre sur les identites de marque, les visuels promotionnels, les interfaces numeriques et les supports creatifs qui aident mes clients a paraitre professionnels et memorables.",
-      "paragraph3": "J'associe narration visuelle et reflexion pratique en design afin que chaque projet soit attractif, efficace et aligne avec les objectifs du client.",
-      "closing": "Collaborons pour donner vie a votre vision."
+      "role": "Graphic Designer & UI Designer",
+      "paragraph1": "Bonjour, je suis Robert — graphic designer et UI designer base a Kigali, au Rwanda, et je travaille professionnellement sous le nom EL-VERBUENA.",
+      "paragraph2": "Je cree des logos, cartes de visite, flyers, pochettes de chansons, packagings et interfaces digitales. Mon objectif sur chaque projet est simple : rendre votre marque tellement belle que les gens s'arretent de scroller.",
+      "paragraph3": "J'ai travaille avec des startups, des artistes, des entreprises tech et des entrepreneurs au Rwanda et au-dela. Que vous ayez besoin d'une identite de marque complete ou d'un simple flyer, j'apporte le meme soin et la meme attention a chaque creation.",
+      "closing": "Construisons quelque chose de grand ensemble."
     },
     "services": {
       "eyebrow": "Ce Que Je Fais",
@@ -54,6 +54,14 @@
         "package": {
           "title": "Design de Packaging",
           "description": "Des visuels de packaging qui ameliorent la presence en rayon et la coherence globale de la marque."
+        },
+        "bookcover": {
+          "title": "Design de Couverture de Livre",
+          "description": "Des couvertures de livre accrocheuses qui capturent l'essence de votre histoire et attirent les lecteurs."
+        },
+        "motion": {
+          "title": "Design Motion",
+          "description": "Contenu video dynamique et animations qui donnent vie a votre marque avec du mouvement et du storytelling visuel."
         }
       }
     },

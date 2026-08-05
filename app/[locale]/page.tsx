@@ -1,437 +1,273 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import Script from 'next/script';
-import {useTranslations, useLocale} from 'next-intl';
-import {usePathname, useRouter} from 'next/navigation';
+import { useTranslations, useLocale } from 'next-intl';
+import Navbar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+
+const skills = [
+  { name: 'Adobe Photoshop', val: 95 },
+  { name: 'Adobe Illustrator', val: 85 },
+  { name: 'Adobe XD', val: 80 },
+  { name: 'Figma', val: 85 },
+  { name: 'Adobe After Effects', val: 70 },
+  { name: 'Content Creation', val: 85 },
+  { name: 'Social Media Management', val: 70 },
+];
+
+const services = [
+  { key: 'logo', img: '/assets/img/EV.jpg', route: 'logo', hasPage: true },
+  { key: 'cards', img: '/assets/img/forbusiness.jpg', route: 'businesscard', hasPage: true },
+  { key: 'flyers', img: '/assets/img/forflyer.png', route: 'flyer', hasPage: true },
+  { key: 'covers', img: '/assets/img/song.png', route: 'songcovers', hasPage: true },
+  { key: 'uiux', img: '/assets/img/home.jpg', route: 'ui', hasPage: true },
+  { key: 'package', img: '/assets/img/pack.png', route: 'package', hasPage: true },
+  { key: 'bookcover', img: '/assets/img/bookcover.jpg', hasPage: false },
+  { key: 'motion', video: '/assets/videos/motion.mp4', hasPage: false },
+];
+
+const recentWork = [
+  { img: '/assets/img/Ibakwe-heroes-day-26.jpg', alt: 'Ibakwe Heroes Day' },
+  { img: '/assets/img/Vex.jpg', alt: 'Vex' },
+  { img: "/assets/img/Alik's cologne4.jpg", alt: "Alik's Cologne" },
+  { img: '/assets/img/Falling.jpg', alt: 'Falling' },
+  { img: '/assets/img/GakeGake.jpg', alt: 'GakeGake' },
+  { img: '/assets/img/KWIBUKA30-2.jpg', alt: 'KWIBUKA30' },
+];
 
 export default function PortfolioPage() {
   const t = useTranslations('HomePage');
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
 
-  const switchLocale = (newLocale: string) => {
-    const segments = pathname.split('/');
-    segments[1] = newLocale;
-    router.push(segments.join('/'));
-  };
   return (
     <>
-      <header id="header" className="d-flex align-items-center">
-        <div className="container d-flex justify-content-between">
-          <div className="logo">
-            <img src="/assets/img/logo.png" alt="" />&nbsp;&nbsp;<a href="/">EL-VERBUENA</a>
-          </div>
-          <nav id="navbar" className="navbar">
-            <ul>
-              <li><a href="#about">{t('nav.about')}</a></li>
-              <li><a href="#services">{t('nav.services')}</a></li>
-              <li><a href="#skills">{t('nav.skills')}</a></li>
-              <li><a href="#testimonials">{t('nav.testimonials')}</a></li>
-              <li><a href="#contact">{t('nav.contact')}</a></li>
-              <li>
-                <button 
-                  onClick={() => switchLocale(locale === 'en' ? 'fr' : 'en')}
-                  style={{
-                    background: 'none',
-                    border: '1px solid #ef3d01',
-                    color: '#ef3d01',
-                    padding: '5px 15px',
-                    borderRadius: '4px',
-                    cursor: 'pointer',
-                    fontSize: '14px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px'
-                  }}
-                >
-                  {locale === 'en' ? (
-                    <>
-                      <img 
-                        src="https://flagcdn.com/w20/fr.png" 
-                        alt="French" 
-                        style={{width: '20px', height: '15px', objectFit: 'cover'}}
-                      />
-                      Français
-                    </>
-                  ) : (
-                    <>
-                      <img 
-                        src="https://flagcdn.com/w20/gb.png" 
-                        alt="English" 
-                        style={{width: '20px', height: '15px', objectFit: 'cover'}}
-                      />
-                      English
-                    </>
-                  )}
-                </button>
-              </li>
-            </ul>
-            <i className="bi bi-list mobile-nav-toggle"></i>
-          </nav>
-        </div>
-      </header>
+      <Navbar />
 
-      <section id="hero">
-        <div id="heroCarousel" data-bs-interval="5000" className="carousel slide carousel-fade" data-bs-ride="carousel">
-          <div className="carousel-inner" role="listbox">
-            <div className="carousel-item active" style={{backgroundImage: "url('/assets/img/first.jpg')"}}>
-              <div className="carousel-container">
-                <div className="carousel-content animate__animated animate__fadeInUp">
-                  <h2>{t('hero.title')}</h2>
-                  <p>{t('hero.description')}</p>
-                  <div className="text-center"><a href="#about" className="btn-get-started">{t('hero.primaryCta')}</a></div>
-                </div>
-              </div>
-            </div>
+      {/* ── HERO ── */}
+      {/* Preload hero image for faster LCP */}
+      <link rel="preload" as="image" href="/assets/img/first.jpg" />
+
+      <section className="ev-hero" style={{ backgroundImage: "url('/assets/img/first.jpg')" }}>
+        <div className="ev-hero-overlay" />
+        <div className="ev-hero-content animate__animated animate__fadeInUp">
+          <p className="ev-hero-eyebrow">Graphic Design &amp; UI</p>
+          <h1>{t('hero.title')}</h1>
+          <p className="ev-hero-desc">{t('hero.description')}</p>
+          <div className="ev-hero-actions">
+            <a href={`/${locale}/flyer`} className="ev-btn-primary">{t('hero.primaryCta')}</a>
+            <a href="#contact" className="ev-btn-outline">{t('hero.secondaryCta')}</a>
           </div>
-          <a className="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon bx bx-left-arrow" aria-hidden="true"></span>
-          </a>
-          <a className="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-            <span className="carousel-control-next-icon bx bx-right-arrow" aria-hidden="true"></span>
-          </a>
-          <ol className="carousel-indicators" id="hero-carousel-indicators"></ol>
         </div>
       </section>
 
-      <main id="main">
-        <section id="about" className="team section-bg">
-          <div className="container">
-            <div className="section-title"></div>
-            <div className="row">
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/me.jpg" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="https://x.com/el_verbuena"><i className="bi bi-twitter"></i></a>
-                      <a href="https://www.facebook.com/roberto.cresswell.33"><i className="bi bi-facebook"></i></a>
-                      <a href="https://www.instagram.com/el_verbuena_k2/"><i className="bi bi-instagram"></i></a>
-                      <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/"><i className="bi bi-linkedin"></i></a>
-                    </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('about.name')}</h4>
-                    <span>{t('about.role')}</span>
-                  </div>
+      <main>
+        {/* ── ABOUT ── */}
+        <section id="about" className="ev-section">
+          <div className="ev-container">
+            <div className="ev-about-grid">
+              <div className="ev-about-img-wrap">
+                <Image
+                  src="/assets/img/me.jpg"
+                  alt={t('about.imageAlt')}
+                  width={420}
+                  height={520}
+                  className="ev-about-img"
+                  priority
+                />
+                <div className="ev-about-socials">
+                  <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer"><i className="bi bi-twitter-x" /></a>
+                  <a href="https://www.facebook.com/roberto.cresswell.33" target="_blank" rel="noopener noreferrer"><i className="bi bi-facebook" /></a>
+                  <a href="https://www.instagram.com/el_verbuena_k2/" target="_blank" rel="noopener noreferrer"><i className="bi bi-instagram" /></a>
+                  <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" target="_blank" rel="noopener noreferrer"><i className="bi bi-linkedin" /></a>
                 </div>
               </div>
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch" style={{width: '700px'}}>
-                <div className="member" style={{width: '700px'}}>
-                  <div className="member-img" style={{width: '600px'}}>
-                    <div className="social"></div>
-                  </div>
-                  <div className="member-info" id="member-info">
-                    <h2><strong>{t('about.eyebrow')}</strong></h2><br/><br/>
-                    <h4 style={{textAlign: 'left', fontWeight: 300}}>
-                      {t('about.paragraph1')} {t('about.paragraph2')} {t('about.paragraph3')}
-                    </h4>
-                    <span>{t('about.closing')}</span>
-                  </div>
-                </div>
+              <div className="ev-about-text">
+                <span className="ev-label">{t('about.eyebrow')}</span>
+                <h2>{t('about.name')}</h2>
+                <p className="ev-about-role">{t('about.role')}</p>
+                <p>{t('about.paragraph1')}</p>
+                <p>{t('about.paragraph2')}</p>
+                <p>{t('about.paragraph3')}</p>
+                <p className="ev-about-closing"><em>{t('about.closing')}</em></p>
+                <a href="#contact" className="ev-btn-primary">{t('hero.secondaryCta')}</a>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="services" className="team section-bg">
-          <div className="container">
-            <div className="section-title">
-              <h2><strong>{t('services.eyebrow')}</strong></h2>
+        {/* ── SERVICES ── */}
+        <section id="services" className="ev-section ev-section-alt">
+          <div className="ev-container">
+            <div className="ev-section-header">
+              <span className="ev-label">{t('services.eyebrow')}</span>
+              <h2>{t('services.title')}</h2>
               <p>{t('services.description')}</p>
             </div>
-            <div className="row">
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/EV.jpg" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="logo.html">Logo design<i className="bi bi-dot"></i></a>
+            <div className="ev-services-grid">
+              {services.map(({ key, img, video, route, hasPage }) => {
+                const Card = hasPage ? Link : 'div';
+                const cardProps = hasPage ? { href: `/${locale}/${route}` } : {};
+                return (
+                  <Card key={key} className="ev-service-card" {...cardProps}>
+                    <div className="ev-service-img-wrap">
+                      {video ? (
+                        <video
+                          src={video}
+                          alt={t(`services.items.${key}.title` as any)}
+                          className="ev-service-img"
+                          muted
+                          loop
+                          autoPlay
+                          playsInline
+                        />
+                      ) : (
+                        <Image src={img} alt={t(`services.items.${key}.title` as any)} width={400} height={280} className="ev-service-img" />
+                      )}
+                      {hasPage && (
+                        <div className="ev-service-overlay">
+                          <span>{locale === 'en' ? 'View Work' : 'Voir les projets'} →</span>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('services.items.logo.title')}</h4>
-                    <span>{t('services.items.logo.description')}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/forbusiness.jpg" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="businesscard.html">Business card and Service card design<i className="bi bi-dot"></i></a>
+                    <div className="ev-service-body">
+                      <h3>{t(`services.items.${key}.title` as any)}</h3>
+                      <p>{t(`services.items.${key}.description` as any)}</p>
                     </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('services.items.cards.title')}</h4>
-                    <span>{t('services.items.cards.description')}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/forflyer.png" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="flyer.html">Flyer/banner/poster design<i className="bi bi-dot"></i></a>
-                    </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('services.items.flyers.title')}</h4>
-                    <span>{t('services.items.flyers.description')}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/song.png" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="songcovers.html">Song/Movie cover design<i className="bi bi-dot"></i></a>
-                    </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('services.items.covers.title')}</h4>
-                    <span>{t('services.items.covers.description')}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/home.jpg" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="ui.html">User interface design<i className="bi bi-dot"></i></a>
-                    </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('services.items.uiux.title')}</h4>
-                    <span>{t('services.items.uiux.description')}</span>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
-                <div className="member">
-                  <div className="member-img">
-                    <img src="/assets/img/pack.png" className="img-fluid" alt="" />
-                    <div className="social">
-                      <a href="package.html">Package design<i className="bi bi-dot"></i></a>
-                    </div>
-                  </div>
-                  <div className="member-info">
-                    <h4>{t('services.items.package.title')}</h4>
-                    <span>{t('services.items.package.description')}</span>
-                  </div>
-                </div>
-              </div>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
 
-        <section id="skills" className="skills" style={{alignContent: 'center'}}>
-          <div className="container">
-            <div className="section-title">
-              <h2><strong>{t('skills.eyebrow')}</strong></h2>
+        {/* ── SKILLS ── */}
+        <section id="skills" className="ev-section">
+          <div className="ev-container">
+            <div className="ev-section-header">
+              <span className="ev-label">{t('skills.eyebrow')}</span>
+              <h2>{t('skills.title')}</h2>
               <p>{t('skills.description')}</p>
             </div>
-            <div className="row skills-content">
-              <div className="col-lg-6">
-                <div className="progress" style={{width: '100%'}}>
-                  <span className="skill">Adobe Photoshop <i className="val">95%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+            <div className="ev-skills-grid">
+              {skills.map(({ name, val }) => (
+                <div key={name} className="ev-skill-item">
+                  <div className="ev-skill-meta">
+                    <span>{name}</span>
+                    <span>{val}%</span>
+                  </div>
+                  <div className="ev-skill-track">
+                    <div className="ev-skill-bar" style={{ width: `${val}%` }} />
                   </div>
                 </div>
-                <div className="progress">
-                  <span className="skill">Adobe Illustrator <i className="val">85%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div className="progress">
-                  <span className="skill">Adobe XD<i className="val">80%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div className="progress" style={{width: '100%'}}>
-                  <span className="skill">Adobe After Effects <i className="val">70%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div className="progress">
-                  <span className="skill">Figma<i className="val">85%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div className="progress">
-                  <span className="skill">Social media platforms management <i className="val">70%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div className="progress">
-                  <span className="skill">Content creation <i className="val">85%</i></span>
-                  <div className="progress-bar-wrap">
-                    <div className="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section id="recent-work" className="team section-bg">
-          <div className="container">
-            <div className="section-title">
-              <h2><strong>{t('work.eyebrow')}</strong></h2>
+        {/* ── RECENT WORK ── */}
+        <section id="recent-work" className="ev-section ev-section-alt">
+          <div className="ev-container">
+            <div className="ev-section-header">
+              <span className="ev-label">{t('work.eyebrow')}</span>
+              <h2>{t('work.title')}</h2>
+              <p>{t('work.description')}</p>
             </div>
-            <div className="row">
-              <div className="col-lg-3 col-md-6 col-12 mb-4">
-                <div className="member text-center">
-                  <div className="member-img">
-                    <img src="/assets/img/Ibakwe-heroes-day-26.jpg" className="img-fluid" alt="" />
+            <div className="ev-work-grid">
+              {recentWork.map(({ img, alt }) => (
+                <div key={img} className="ev-work-item">
+                  <Image src={img} alt={alt} width={400} height={300} className="ev-work-img" />
+                  <div className="ev-work-hover">
+                    <span>{alt}</span>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-12 mb-4">
-                <div className="member text-center">
-                  <div className="member-img">
-                    <img src="/assets/img/Vex.jpg" className="img-fluid" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-12 mb-4">
-                <div className="member text-center">
-                  <div className="member-img">
-                    <img src="/assets/img/Alik's cologne4.jpg" className="img-fluid" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-12 mb-4">
-                <div className="member text-center">
-                  <div className="member-img">
-                    <img src="/assets/img/Falling.jpg" className="img-fluid" alt="" />
-                  </div>
-                </div>
-              </div>
-              <div className="text-center">
-                <a href="flyer.html" className="btn-get-started">{t('hero.primaryCta')}</a>
-              </div>
+              ))}
+            </div>
+            <div className="ev-work-cta">
+              <Link href={`/${locale}/flyer`} className="ev-btn-primary">{t('hero.primaryCta')}</Link>
             </div>
           </div>
         </section>
 
-        <section id="testimonials" className="testimonials">
-          <div className="container">
-            <div className="section-title">
-              <h2>What Our <strong>{t('testimonials.eyebrow')}</strong> Say</h2>
+        {/* ── TESTIMONIALS ── */}
+        <section id="testimonials" className="ev-section">
+          <div className="ev-container">
+            <div className="ev-section-header">
+              <span className="ev-label">{t('testimonials.eyebrow')}</span>
+              <h2>{t('testimonials.title')}</h2>
               <p>{t('testimonials.description')}</p>
             </div>
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="testimonial-item mt-4 mt-lg-0">
-                  <h3>IZERE HIRWA Roger</h3>
-                  <h4>{t('testimonials.items.rogerRole')}</h4>
-                  <p>
-                    <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                    "{t('testimonials.items.rogerQuote')}"
-                    <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+            <div className="ev-testimonials-grid">
+              <div className="ev-testimonial-card">
+                <i className="bx bxs-quote-alt-left ev-quote-icon" />
+                <p>"{t('testimonials.items.rogerQuote')}"</p>
+                <div className="ev-testimonial-author">
+                  <strong>IZERE HIRWA Roger</strong>
+                  <span>{t('testimonials.items.rogerRole')}</span>
                 </div>
               </div>
-              <div className="col-lg-6">
-                <div className="testimonial-item mt-4">
-                  <h3>UWAYEZU Jean Felix</h3>
-                  <h4>{t('testimonials.items.felixRole')}</h4>
-                  <p>
-                    <i className="bx bxs-quote-alt-left quote-icon-left"></i>
-                    "{t('testimonials.items.felixQuote')}"
-                    <i className="bx bxs-quote-alt-right quote-icon-right"></i>
-                  </p>
+              <div className="ev-testimonial-card">
+                <i className="bx bxs-quote-alt-left ev-quote-icon" />
+                <p>"{t('testimonials.items.felixQuote')}"</p>
+                <div className="ev-testimonial-author">
+                  <strong>UWAYEZU Jean Felix</strong>
+                  <span>{t('testimonials.items.felixRole')}</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section id="contact" className="contact">
-          <div className="container">
-            <div className="section-title">
-              <h2><strong>{t('contact.eyebrow')}</strong></h2>
+        {/* ── CONTACT ── */}
+        <section id="contact" className="ev-section">
+          <div className="ev-container">
+            <div className="ev-section-header">
+              <span className="ev-label">{t('contact.eyebrow')}</span>
+              <h2>{t('contact.title')}</h2>
               <p>{t('contact.description')}</p>
             </div>
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="info">
-                  <div className="address">
-                    <i className="bi bi-geo-alt"></i>
-                    <h4>{t('contact.locationTitle')}:</h4>
-                    <p>{t('contact.locationValue')}</p>
-                  </div><br/>
-                  <div className="email">
-                    <a href="mailto:robertscresswell@gmail.com" style={{textDecoration: 'none', color: 'inherit'}}>
-                      <i className="bi bi-envelope"></i>
-                      <h4>{t('contact.directTitle')}:</h4>
-                      <p>robertscresswell@gmail.com</p>
-                    </a>
-                  </div><br/>
-                  <div className="phone">
-                    <a href="tel:+250789492390" style={{textDecoration: 'none', color: 'inherit'}}>
-                      <i className="bi bi-phone"></i>
-                      <h4>{t('contact.directTitle')}:</h4>
-                      <p>+250 789 492 390</p>
-                    </a>
-                    <br/>
-                    <a href="tel:+250789438711" style={{textDecoration: 'none', color: 'inherit'}}>
-                      <p>+250 789 438 711</p>
-                    </a>
-                  </div><br/>
-                  <div className="phone">
-                    <a href="https://wa.me/250789492390" target="_blank" style={{textDecoration: 'none', color: 'inherit'}}>
-                      <i className="bi bi-whatsapp"></i>
-                      <h4>{t('contact.directTitle')}:</h4>
-                      <p>+250 789 492 390</p>
-                    </a>
-                  </div>
+            <div className="ev-contact-grid">
+              <a href="mailto:robertscresswell@gmail.com" className="ev-contact-card">
+                <i className="bi bi-envelope" />
+                <div>
+                  <strong>Email</strong>
+                  <span>robertscresswell@gmail.com</span>
                 </div>
-              </div>
+              </a>
+              <a href="tel:+250789492390" className="ev-contact-card">
+                <i className="bi bi-phone" />
+                <div>
+                  <strong>Phone</strong>
+                  <span>+250 789 492 390</span>
+                </div>
+              </a>
+              <a href="tel:+250789438711" className="ev-contact-card">
+                <i className="bi bi-phone" />
+                <div>
+                  <strong>Phone</strong>
+                  <span>+250 789 438 711</span>
+                </div>
+              </a>
+              <a href="https://wa.me/250789492390" target="_blank" rel="noopener noreferrer" className="ev-contact-card">
+                <i className="bi bi-whatsapp" />
+                <div>
+                  <strong>WhatsApp</strong>
+                  <span>+250 789 492 390</span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
       </main>
 
-      <footer id="footer">
-        <div className="container d-md-flex py-4">
-          <div className="me-md-auto text-center text-md-start">
-            <div className="copyright">
-              &copy; Copyright <img src="/assets/img/logo-1.png" alt="EL-VERBUENA" style={{height: '30px'}} /> <strong><span>EL-VERBUENA</span></strong>. All Rights Reserved
-            </div>
-          </div>
-          <div className="social-links text-center text-md-right pt-3 pt-md-0">
-            <a href="https://x.com/el_verbuena" className="twitter"><i className="bx bxl-twitter"></i></a>
-            <a href="https://www.facebook.com/roberto.cresswell.33" className="facebook"><i className="bx bxl-facebook"></i></a>
-            <a href="https://www.instagram.com/el_verbuena_k2/" className="instagram"><i className="bx bxl-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/mugabo-robert-7647a428b/" className="linkedin"><i className="bx bxl-linkedin"></i></a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
 
-      <a href="#" className="back-to-top d-flex align-items-center justify-content-center">
-        <i className="bi bi-arrow-up-short"></i>
+      <a href="#" className="ev-back-top" aria-label="Back to top">
+        <i className="bi bi-arrow-up-short" />
       </a>
 
-      <Script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js" strategy="afterInteractive" />
-      <Script src="/assets/vendor/glightbox/js/glightbox.min.js" strategy="afterInteractive" />
-      <Script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js" strategy="afterInteractive" />
-      <Script src="/assets/vendor/swiper/swiper-bundle.min.js" strategy="afterInteractive" />
-      <Script src="/assets/vendor/waypoints/noframework.waypoints.js" strategy="afterInteractive" />
-      <Script src="/assets/vendor/php-email-form/validate.js" strategy="afterInteractive" />
-      <Script src="/assets/js/main.js" strategy="afterInteractive" />
+      <Script src="/assets/js/main.js" strategy="lazyOnload" />
     </>
   );
 }

@@ -9,7 +9,7 @@
       "contact": "Contact"
     },
     "hero": {
-      "title": "I'M A Graphic Design and UI Portfolio",
+      "title": "Creative Graphic & UI Design",
       "description": "EL-VERBUENA helps businesses, artists and founders communicate clearly through branding, digital design and high-impact visuals.",
       "primaryCta": "View My Work",
       "secondaryCta": "Contact Me",
@@ -17,14 +17,14 @@
     },
     "about": {
       "eyebrow": "About Me",
-      "title": "Creative direction with clarity, craft and consistency.",
+      "title": "Design that speaks before you say a word.",
       "imageAlt": "Portrait of Mugabo Robert",
       "name": "MUGABO Robert",
-      "role": "Graphic Designer and UI Designer",
-      "paragraph1": "I am a passionate and detail-oriented graphic designer and UI designer professionally known as EL-VERBUENA, based in Kigali, Rwanda.",
-      "paragraph2": "My work focuses on brand identities, promotional visuals, digital interfaces and presentation-ready creative assets that help clients look professional and feel memorable.",
-      "paragraph3": "I combine visual storytelling with practical design thinking so every project is attractive, effective and aligned with the client’s goals.",
-      "closing": "Let’s collaborate and bring your vision to life."
+      "role": "Graphic Designer & UI Designer",
+      "paragraph1": "Hey, I'm Robert — a graphic designer and UI designer based in Kigali, Rwanda, working professionally under the name EL-VERBUENA.",
+      "paragraph2": "I design logos, business cards, flyers, song covers, packaging and digital interfaces. My goal with every project is simple: make your brand look so good that people stop scrolling.",
+      "paragraph3": "I've worked with startups, artists, tech companies and entrepreneurs across Rwanda and beyond. Whether you need a full brand identity or a single flyer, I bring the same care and attention to every piece.",
+      "closing": "Let's build something great together."
     },
     "services": {
       "eyebrow": "What I Do",
@@ -54,6 +54,14 @@
         "package": {
           "title": "Package Design",
           "description": "Packaging visuals that improve shelf presence, product perception and overall brand consistency."
+        },
+        "bookcover": {
+          "title": "Book Cover Design",
+          "description": "Eye-catching book covers that capture the essence of your story and attract readers."
+        },
+        "motion": {
+          "title": "Motion Design",
+          "description": "Dynamic video content and animations that bring your brand to life with movement and visual storytelling."
         }
       }
     },
@@ -82,14 +90,14 @@
       "description": "Creative quality, consistency and reliability are the reasons clients keep recommending this work.",
       "items": {
         "rogerRole": "Co-Founder and CTO, HDEV Tech Ltd",
-        "rogerQuote": "EL-VERBUENA has been an incredible asset to HDEV Ltd. Their creativity, attention to detail and ability to deliver strong designs under tight timelines significantly elevated our brand’s visual presence.",
+        "rogerQuote": "EL-VERBUENA has been an incredible asset to HDEV Ltd. Their creativity, attention to detail and ability to deliver strong designs under tight timelines significantly elevated our brand's visual presence.",
         "felixRole": "Chief Executive Officer, JF Tech Ltd",
         "felixQuote": "Working with EL-VERBUENA has been transformative for JF Tech. The ability to turn complex ideas into compelling visuals brought real value to our brand and communication."
       }
     },
     "contact": {
       "eyebrow": "Contact",
-      "title": "Let’s discuss your next design project.",
+      "title": "Let's discuss your next design project.",
       "description": "Reach out for branding, design support, project collaboration or questions about available services.",
       "directTitle": "Direct Contact",
       "locationTitle": "Location",
