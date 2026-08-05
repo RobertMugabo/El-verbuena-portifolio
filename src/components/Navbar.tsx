@@ -52,6 +52,16 @@ export default function Navbar({ locale, translations }: NavbarProps) {
         </nav>
 
         <div className="ev-header-controls">
+          <button
+            className="ev-hamburger"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+            aria-expanded={menuOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
           <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
         </div>
       </div>
