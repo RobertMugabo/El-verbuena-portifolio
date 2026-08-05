@@ -31,6 +31,16 @@ a:hover { text-decoration: none !important; }
 img { max-width: 100%; display: block; }
 u, .underline { text-decoration: underline; }
 
+/* Icons - use brand color */
+i, .bi, .bx {
+  color: var(--brand);
+}
+
+/* Back to top icon stays white */
+.ev-back-top i, .ev-back-top .bi, .ev-back-top .bx {
+  color: #fff;
+}
+
 /* ── LAYOUT ── */
 .ev-container {
   width: 100%;
@@ -546,7 +556,7 @@ u, .underline { text-decoration: underline; }
   align-items: flex-start;
   gap: 20px;
   background: var(--bg);
-  border-radius: 0;
+  border-radius: var(--radius);
   padding: 28px;
   box-shadow: var(--shadow);
   transition: var(--transition);
