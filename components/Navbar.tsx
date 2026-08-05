@@ -39,17 +39,20 @@ export default function Navbar({ locale, translations }: NavbarProps) {
 
         <nav className={`ev-nav ${menuOpen ? 'open' : ''}`}>
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href}>
+            <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
               {link.label}
             </Link>
           ))}
-          <a href={`/${locale}#footer`} className="ev-nav-cta">
+          <a href={`/${locale}#footer`} className="ev-nav-cta" onClick={() => setMenuOpen(false)}>
             {translations.nav.getInTouch}
           </a>
         </nav>
 
-        <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
+        <div className="ev-header-controls">
+          <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
+        </div>
       </div>
+      {menuOpen && <div className="ev-nav-overlay" onClick={() => setMenuOpen(false)} />}
     </header>
   );
 }
