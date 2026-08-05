@@ -48,7 +48,7 @@ export default async function ServicesPage({ params }: Props) {
                     loop
                     muted
                     playsInline
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                   />
                 ) : (
                   <Image

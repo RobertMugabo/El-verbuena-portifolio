@@ -59,7 +59,7 @@ export default async function WorkCategoryPage({ params }: Props) {
                     loop
                     muted
                     playsInline
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                   />
                 ) : (
                   <Image
@@ -69,7 +69,7 @@ export default async function WorkCategoryPage({ params }: Props) {
                     height={400}
                     loading={i < 4 ? 'eager' : 'lazy'}
                     sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                   />
                 )}
                 {itemTitle && (
@@ -100,7 +100,7 @@ export default async function WorkCategoryPage({ params }: Props) {
                       loop
                       muted
                       playsInline
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
                     />
                   ) : (
                     <Image
