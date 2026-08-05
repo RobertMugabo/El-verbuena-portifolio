@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import { IconTwitterX, IconFacebook, IconInstagram, IconLinkedin } from '@/components/Icons';
 
@@ -23,15 +22,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : 'Learn about MUGABO Robert (EL-VERBUENA), a graphic designer and UI designer based in Kigali, Rwanda specializing in branding, logo design, and digital interfaces.',
   };
 }
-
-const services = [
-  { key: 'logo', img: '/assets/img/EV.jpg', route: 'logo' },
-  { key: 'cards', img: '/assets/img/forbusiness.jpg', route: 'businesscard' },
-  { key: 'flyers', img: '/assets/img/forflyer.png', route: 'flyer' },
-  { key: 'covers', img: '/assets/img/song.png', route: 'songcovers' },
-  { key: 'uiux', img: '/assets/img/home.jpg', route: 'ui' },
-  { key: 'package', img: '/assets/img/pack.png', route: 'package' },
-];
 
 export default async function AboutPage({ params }: Props) {
   const { locale } = await params;
@@ -74,7 +64,7 @@ export default async function AboutPage({ params }: Props) {
         </div>
       </section>
 
-      <Script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({

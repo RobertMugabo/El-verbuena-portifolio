@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from '@/i18n/navigation';
 import Image from 'next/image';
+import { IconMoon, IconSun } from './Icons';
 
 interface NavbarClientProps {
   locale: string;
@@ -19,26 +20,22 @@ export default function NavbarClient({ locale }: NavbarClientProps) {
     setTheme(savedTheme);
   }, []);
 
-  const toggleTheme = useCallback(() => {
+  const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
-  }, [theme]);
+  };
 
-  const switchLocale = useCallback(() => {
+  const switchLocale = () => {
     const next = locale === 'en' ? 'fr' : 'en';
     router.replace(pathname, { locale: next });
-  }, [locale, pathname, router]);
+  };
 
   return (
     <>
       <button className="ev-theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
-        {theme === 'light' ? (
-          <i className="bx bx-moon" />
-        ) : (
-          <i className="bx bx-sun" />
-        )}
+        {theme === 'light' ? <IconMoon size={18} /> : <IconSun size={18} />}
       </button>
       <button className="ev-lang-btn" onClick={switchLocale} aria-label="Switch language">
         <Image
@@ -46,8 +43,7 @@ export default function NavbarClient({ locale }: NavbarClientProps) {
           alt={locale === 'en' ? 'Français' : 'English'}
           width={22}
           height={16}
-          unoptimized
-          loading="lazy"
+          priority
         />
         <span>{locale === 'en' ? 'FR' : 'EN'}</span>
       </button>

@@ -18,24 +18,24 @@ interface NavbarProps {
 
 export default function Navbar({ locale, translations }: NavbarProps) {
   const navLinks = [
-    { href: `/${locale}`, label: translations.nav.home, prefetch: true },
-    { href: `/${locale}/about`, label: translations.nav.about, prefetch: true },
-    { href: `/${locale}/services`, label: translations.nav.services, prefetch: true },
-    { href: `/${locale}/skills`, label: translations.nav.skills, prefetch: true },
-    { href: `/${locale}/testimonials`, label: translations.nav.testimonials, prefetch: true },
+    { href: `/${locale}`, label: translations.nav.home },
+    { href: `/${locale}/about`, label: translations.nav.about },
+    { href: `/${locale}/services`, label: translations.nav.services },
+    { href: `/${locale}/skills`, label: translations.nav.skills },
+    { href: `/${locale}/testimonials`, label: translations.nav.testimonials },
   ];
 
   return (
     <header className="ev-header">
       <div className="ev-header-inner">
-        <Link href={`/${locale}`} className="ev-logo" prefetch>
+        <Link href={`/${locale}`} className="ev-logo">
           <Image src="/assets/img/logo.png" alt="EL-VERBUENA" width={44} height={44} priority />
           <span>EL-VERBUENA</span>
         </Link>
 
         <nav className="ev-nav">
           {navLinks.map(link => (
-            <Link key={link.href} href={link.href} prefetch={link.prefetch}>
+            <Link key={link.href} href={link.href}>
               {link.label}
             </Link>
           ))}

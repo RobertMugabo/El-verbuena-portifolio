@@ -1,156 +1,107 @@
-import Image from "next/image";
-import {getTranslations, setRequestLocale} from "next-intl/server";
-import {notFound} from "next/navigation";
-import {Link} from "@/i18n/navigation";
-import {getServiceByKey, serviceKeys, services} from "@/lib/portfolio-data";
+import Image from 'next/image';
+import Link from 'next/link';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
+import { getServiceByKey, serviceKeys, services } from '@/lib/portfolio-data';
+import PortfolioHero from '@/components/PortfolioHero';
+
+type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export function generateStaticParams() {
-  return serviceKeys.map((slug) => ({slug}));
+  return serviceKeys.flatMap((slug) => [
+    { locale: 'en', slug },
+    { locale: 'fr', slug },
+  ]);
 }
 
-export default async function WorkCategoryPage({
-  params
-}: {
-  params: Promise<{locale: string; slug: string}>;
-}) {
-  const {locale, slug} = await params;
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const service = getServiceByKey(slug);
+  if (!service) return {};
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
+  const title = t(`services.items.${service.key}.title` as any);
+  return {
+    title: `${title} | EL-VERBUENA`,
+    description: t(`services.items.${service.key}.description` as any),
+  };
+}
+
+export default async function WorkCategoryPage({ params }: Props) {
+  const { locale, slug } = await params;
   setRequestLocale(locale);
 
   const service = getServiceByKey(slug);
+  if (!service) notFound();
 
-  if (!service) {
-    notFound();
-  }
+  const t = await getTranslations({ locale, namespace: 'HomePage' });
+  const title = t(`services.items.${service.key}.title` as any);
+  const desc = t(`services.items.${service.key}.description` as any);
 
-  const home = await getTranslations({locale, namespace: "HomePage"});
-  const page = await getTranslations({locale, namespace: "PortfolioPage"});
+  const galleryItems = service.details.length > 0 ? service.details : service.gallery.map((img) => ({ image: img, title: '', description: '' }));
+  const otherServices = services.filter((s) => s.key !== service.key);
 
   return (
-    <main className="page-shell">
-      <section className="hero-section">
-        <header className="site-header">
-          <Link href="/" locale={locale} className="brand">
-            <Image
-              src="/assets/img/logo.png"
-              alt="EL-VERBUENA logo"
-              width={54}
-              height={54}
-              className="brand-logo"
-            />
-            <span>EL-VERBUENA</span>
-          </Link>
+    <>
+      <PortfolioHero img={service.heroImage} label="Portfolio" title={title} desc={desc} />
 
-          <Link href="/" locale={locale} className="locale-link">
-            {page("backHome")}
-          </Link>
-        </header>
-
-        <div className="detail-hero-grid">
-          <div className="hero-copy">
-            <p className="eyebrow">{page("eyebrow")}</p>
-            <h1>{home(`services.items.${service.key}.title`)}</h1>
-            <p className="hero-text">{home(`work.showcase.${service.key}`)}</p>
-            <div className="hero-actions">
-              <a href="#gallery" className="button primary">
-                {page("galleryTitle")}
-              </a>
-              <a href={`/${locale}#contact`} className="button secondary">
-                {page("ctaButton")}
-              </a>
-            </div>
-          </div>
-
-          <div className="hero-card">
-            <Image
-              src={service.heroImage}
-              alt={home(`services.items.${service.key}.title`)}
-              width={800}
-              height={600}
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="hero-image"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" className="content-section">
-        <div className="section-heading">
-          <p className="eyebrow">{page("galleryEyebrow")}</p>
-          <h2>{page("galleryTitle")}</h2>
-          <p>{page("galleryDescription")}</p>
-        </div>
-
-        {service.details.length > 0 ? (
-          <div className="detail-gallery-grid">
-            {service.details.map((item, i) => (
-              <article key={item.image} className="detail-card">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  width={640}
-                  height={640}
-                  loading={i < 4 ? 'eager' : 'lazy'}
-                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  className="detail-gallery-image"
-                />
-                <div className="detail-copy">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        ) : (
-          <div className="detail-gallery-grid">
-            {service.gallery.map((image, i) => (
-              <div key={image} className="gallery-card">
+      <section className="ev-section">
+        <div className="ev-container">
+          <Link href={`/${locale}/services`} className="ev-back-link">← {locale === 'fr' ? 'Retour aux services' : 'Back to Services'}</Link>
+          <div className="ev-gallery-grid">
+            {galleryItems.map(({ image, title: itemTitle }, i) => (
+              <div key={image} className="ev-gallery-item">
                 <Image
                   src={image}
-                  alt={home(`services.items.${service.key}.title`)}
-                  width={640}
-                  height={640}
+                  alt={itemTitle || title}
+                  width={400}
+                  height={400}
                   loading={i < 4 ? 'eager' : 'lazy'}
-                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  className="detail-gallery-image"
+                  sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
+                {itemTitle && (
+                  <div className="ev-gallery-caption">
+                    <strong>{itemTitle}</strong>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        )}
+        </div>
       </section>
 
-      <section className="content-section">
-        <div className="section-heading">
-          <p className="eyebrow">{page("moreEyebrow")}</p>
-          <h2>{page("moreTitle")}</h2>
-          <p>{page("moreDescription")}</p>
-        </div>
-
-        <div className="services-grid">
-          {services
-            .filter((item) => item.key !== service.key)
-            .map((item) => (
-              <Link key={item.key} href={item.href} locale={locale} className="service-link-card">
-                <article className="service-card">
+      <section className="ev-section ev-section-alt">
+        <div className="ev-container">
+          <div className="ev-section-header">
+            <span className="ev-label">{locale === 'fr' ? 'Plus de travaux' : 'More Work'}</span>
+            <h2>{locale === 'fr' ? 'Autres services' : 'Other Services'}</h2>
+          </div>
+          <div className="ev-services-grid">
+            {otherServices.map((item) => (
+              <Link key={item.key} href={`/${locale}/work/${item.key}`} className="ev-service-card" prefetch={false}>
+                <div className="ev-service-img-wrap">
                   <Image
                     src={item.image}
-                    alt={home(`services.items.${item.key}.title`)}
-                    width={520}
-                    height={360}
+                    alt={t(`services.items.${item.key}.title` as any)}
+                    width={400}
+                    height={280}
+                    className="ev-service-img"
                     loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                    className="service-image"
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
-                  <div className="service-copy">
-                    <h3>{home(`services.items.${item.key}.title`)}</h3>
-                    <p>{home(`work.showcase.${item.key}`)}</p>
+                  <div className="ev-service-overlay">
+                    <span>{locale === 'fr' ? 'Voir les projets →' : 'View Work →'}</span>
                   </div>
-                </article>
+                </div>
+                <div className="ev-service-body">
+                  <h3>{t(`services.items.${item.key}.title` as any)}</h3>
+                </div>
               </Link>
             ))}
+          </div>
         </div>
       </section>
-    </main>
+    </>
   );
 }

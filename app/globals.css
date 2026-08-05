@@ -36,7 +36,6 @@ body {
   background: var(--bg);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a { color: inherit; text-decoration: none !important; }
@@ -44,15 +43,6 @@ a:hover { text-decoration: none !important; }
 img { max-width: 100%; display: block; }
 u, .underline { text-decoration: underline; }
 
-/* Icons - use brand color */
-i, .bi, .bx {
-  color: var(--brand);
-}
-
-/* Back to top icon stays white */
-.ev-back-top i, .ev-back-top .bi, .ev-back-top .bx {
-  color: #fff;
-}
 
 /* ── LAYOUT ── */
 .ev-container {
@@ -105,7 +95,6 @@ i, .bi, .bx {
   padding: 14px 32px;
   border-radius: 50px;
   border: 2px solid var(--brand);
-  transition: var(--transition);
   cursor: pointer;
 }
 .ev-btn-primary:hover {
@@ -126,7 +115,6 @@ i, .bi, .bx {
   padding: 14px 32px;
   border-radius: 50px;
   border: 2px solid rgba(255,255,255,0.7);
-  transition: var(--transition);
 }
 .ev-btn-outline:hover {
   background: rgba(255,255,255,0.15);
@@ -142,7 +130,7 @@ i, .bi, .bx {
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   z-index: 1000;
-  transition: var(--transition);
+  will-change: transform;
 }
 .ev-header-inner {
   max-width: 1200px;
@@ -177,7 +165,6 @@ i, .bi, .bx {
   color: var(--text);
   padding: 8px 12px;
   border-radius: 6px;
-  transition: var(--transition);
 }
 .ev-nav a:hover { color: var(--brand); background: rgba(239,61,1,0.06); }
 .ev-nav-cta {
@@ -208,7 +195,6 @@ i, .bi, .bx {
   padding: 6px 14px;
   border-radius: 50px;
   cursor: pointer;
-  transition: var(--transition);
   margin-left: 8px;
 }
 .ev-theme-btn:hover { background: var(--bg-alt); color: var(--brand); }
@@ -228,7 +214,6 @@ i, .bi, .bx {
   padding: 6px 14px;
   border-radius: 50px;
   cursor: pointer;
-  transition: var(--transition);
   margin-left: 8px;
 }
 .ev-lang-btn:hover { color: var(--brand); opacity: 0.8; }
@@ -249,7 +234,6 @@ i, .bi, .bx {
   height: 2px;
   background: var(--text);
   border-radius: 2px;
-  transition: var(--transition);
 }
 
 @media (max-width: 900px) {
@@ -407,7 +391,6 @@ i, .bi, .bx {
   overflow: hidden;
   background: var(--bg);
   box-shadow: var(--shadow);
-  transition: var(--transition);
   display: block;
 }
 .ev-service-card:hover {
@@ -423,7 +406,6 @@ i, .bi, .bx {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 .ev-service-img-wrap video {
   width: 100%;
@@ -439,7 +421,6 @@ i, .bi, .bx {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: var(--transition);
 }
 .ev-service-card:hover .ev-service-overlay { opacity: 1; }
 .ev-service-overlay span {
@@ -516,7 +497,6 @@ i, .bi, .bx {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
 }
 .ev-work-item:hover .ev-work-img { transform: scale(1.06); }
 .ev-work-hover {
@@ -527,7 +507,6 @@ i, .bi, .bx {
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: var(--transition);
 }
 .ev-work-item:hover .ev-work-hover { opacity: 1; }
 .ev-work-hover span {
@@ -611,12 +590,6 @@ i, .bi, .bx {
   border-color: var(--brand);
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
-}
-.ev-contact-card i {
-  font-size: 24px;
-  color: var(--brand);
-  flex-shrink: 0;
-  margin-top: 2px;
 }
 .ev-contact-card div {
   display: flex;
