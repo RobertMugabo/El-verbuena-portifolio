@@ -1,0 +1,44 @@
+{
+  "name": "el-verbuena-portifolio",
+  "version": "1.0.0",
+  "description": "EL-VERBUENA portfolio rebuilt with Next.js and English/French translations.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RobertMugabo/El-verbuena-portifolio.git"
+  },
+  "keywords": [],
+  "author": "EL-VERBUENA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RobertMugabo/El-verbuena-portifolio/issues"
+  },
+  "homepage": "https://github.com/RobertMugabo/El-verbuena-portifolio#readme",
+  "dependencies": {
+    "next": "^16.3.0",
+    "next-intl": "^4.13.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.1",
+    "aos": "^2.3.4",
+    "boxicons": "^2.1.4",
+    "glightbox": "^3.2.0",
+    "isotope-layout": "^3.0.6",
+    "swiper": "^11.0.5",
+    "waypoints": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.0",
+    "typescript": "^6.0.3"
+  }
+}
