@@ -46,8 +46,9 @@ export default function Navbar({ locale, translations }: NavbarProps) {
           <a href={`/${locale}#footer`} className="ev-nav-cta">
             {translations.nav.getInTouch}
           </a>
-          <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
         </nav>
+
+        <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
       </div>
     </header>
   );

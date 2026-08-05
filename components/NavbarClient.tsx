@@ -22,10 +22,10 @@ export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
+    const next = theme === 'light' ? 'dark' : 'light';
+    setTheme(next);
+    localStorage.setItem('theme', next);
+    document.documentElement.setAttribute('data-theme', next);
   };
 
   const switchLocale = () => {
@@ -34,9 +34,9 @@ export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps
   };
 
   const toggleMenu = () => {
-    const newState = !menuOpen;
-    setMenuOpen(newState);
-    onMenuToggle(newState);
+    const next = !menuOpen;
+    setMenuOpen(next);
+    onMenuToggle(next);
   };
 
   return (
