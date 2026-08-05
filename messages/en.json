@@ -1,12 +1,14 @@
 {
   "HomePage": {
     "nav": {
+      "home": "Home",
       "about": "About",
       "services": "Services",
       "skills": "Skills",
       "work": "Work",
       "testimonials": "Testimonials",
-      "contact": "Contact"
+      "contact": "Contact",
+      "getInTouch": "Get in touch"
     },
     "hero": {
       "title": "Creative Graphic & UI Design",
@@ -107,6 +109,12 @@
       "note": "English and French versions are now supported, making this portfolio ready for international visitors and Vercel hosting."
     },
     "footer": {
+      "tagline": "Creative Graphic & UI Design",
+      "location": "Based in Kigali, Rwanda",
+      "contact": "Contact",
+      "follow": "Follow",
+      "quickLinks": "Quick Links",
+      "rights": "All Rights Reserved",
       "copyright": "Copyright {year} EL-VERBUENA. All rights reserved."
     }
   },

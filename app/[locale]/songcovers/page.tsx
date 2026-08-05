@@ -1,10 +1,24 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+import { setRequestLocale } from 'next-intl/server';
+import type { Metadata } from 'next';
+import PortfolioHero from '@/components/PortfolioHero';
+
+type Props = { params: Promise<{ locale: string }> };
+
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'fr' }];
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: locale === 'fr' ? 'Pochettes de Chansons & Films | EL-VERBUENA' : 'Song & Movie Covers | EL-VERBUENA',
+    description: locale === 'fr'
+      ? 'Pochettes qui capturent l\'émotion et l\'identité en un seul regard — EL-VERBUENA, Kigali Rwanda.'
+      : 'Cover artwork that captures emotion, personality and story at a single glance — EL-VERBUENA, Kigali Rwanda.',
+  };
+}
 
 const covers = [
   { img: '/assets/img/Bad energy2.jpg', name: 'Bad Energy' },
@@ -19,38 +33,31 @@ const covers = [
   { img: '/assets/img/YT1.jpg', name: 'YT Cover' },
 ];
 
-export default function SongCoversPage() {
-  const locale = useLocale();
+export default async function SongCoversPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
-      <Navbar />
-      <div style={{ marginTop: 70 }}>
-        <div className="ev-portfolio-hero" style={{ backgroundImage: "url('/assets/img/msc.png')" }}>
-          <div className="ev-portfolio-hero-overlay" />
-          <div className="ev-portfolio-hero-content">
-            <span className="ev-label">Portfolio</span>
-            <h1>Song &amp; Movie Covers</h1>
-            <p>Cover artwork that captures emotion, personality and story at a single glance.</p>
+      <PortfolioHero
+        img="/assets/img/msc.png"
+        label="Portfolio"
+        title="Song & Movie Covers"
+        desc="Cover artwork that captures emotion, personality and story at a single glance."
+      />
+      <section className="ev-section">
+        <div className="ev-container">
+          <Link href={`/${locale}`} className="ev-back-link">← Back to Portfolio</Link>
+          <div className="ev-gallery-grid">
+            {covers.map(({ img, name }, i) => (
+              <div key={name} className="ev-gallery-item">
+                <Image src={img} alt={name} width={400} height={400} loading={i < 4 ? 'eager' : 'lazy'} sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div className="ev-gallery-caption"><strong>{name}</strong></div>
+              </div>
+            ))}
           </div>
         </div>
-
-        <section className="ev-section">
-          <div className="ev-container">
-            <Link href={`/${locale}`} className="ev-back-link">← Back to Portfolio</Link>
-            <div className="ev-gallery-grid">
-              {covers.map(({ img, name }) => (
-                <div key={name} className="ev-gallery-item">
-                  <Image src={img} alt={name} width={400} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  <div className="ev-gallery-caption">
-                    <strong>{name}</strong>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      </div>
-      <Footer />
+      </section>
     </>
   );
 }

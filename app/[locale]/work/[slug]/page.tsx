@@ -64,9 +64,10 @@ export default async function WorkCategoryPage({
             <Image
               src={service.heroImage}
               alt={home(`services.items.${service.key}.title`)}
-              width={1200}
-              height={900}
+              width={800}
+              height={600}
               priority
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="hero-image"
             />
           </div>
@@ -82,13 +83,15 @@ export default async function WorkCategoryPage({
 
         {service.details.length > 0 ? (
           <div className="detail-gallery-grid">
-            {service.details.map((item) => (
+            {service.details.map((item, i) => (
               <article key={item.image} className="detail-card">
                 <Image
                   src={item.image}
                   alt={item.title}
                   width={640}
                   height={640}
+                  loading={i < 4 ? 'eager' : 'lazy'}
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                   className="detail-gallery-image"
                 />
                 <div className="detail-copy">
@@ -100,13 +103,15 @@ export default async function WorkCategoryPage({
           </div>
         ) : (
           <div className="detail-gallery-grid">
-            {service.gallery.map((image) => (
+            {service.gallery.map((image, i) => (
               <div key={image} className="gallery-card">
                 <Image
                   src={image}
                   alt={home(`services.items.${service.key}.title`)}
                   width={640}
                   height={640}
+                  loading={i < 4 ? 'eager' : 'lazy'}
+                  sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 33vw"
                   className="detail-gallery-image"
                 />
               </div>
@@ -126,18 +131,15 @@ export default async function WorkCategoryPage({
           {services
             .filter((item) => item.key !== service.key)
             .map((item) => (
-              <Link
-                key={item.key}
-                href={item.href}
-                locale={locale}
-                className="service-link-card"
-              >
+              <Link key={item.key} href={item.href} locale={locale} className="service-link-card">
                 <article className="service-card">
                   <Image
                     src={item.image}
                     alt={home(`services.items.${item.key}.title`)}
                     width={520}
                     height={360}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                     className="service-image"
                   />
                   <div className="service-copy">
