@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const t = useTranslations('HomePage');
@@ -12,6 +12,20 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
 
   const switchLocale = () => {
     const next = locale === 'en' ? 'fr' : 'en';
@@ -25,7 +39,6 @@ export default function Navbar() {
     { href: `/${locale}#services`, label: t('nav.services') },
     { href: `/${locale}#skills`, label: t('nav.skills') },
     { href: `/${locale}#testimonials`, label: t('nav.testimonials') },
-    { href: `/${locale}#contact`, label: t('nav.contact') },
   ];
 
   return (
@@ -42,6 +55,16 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a href={`/#footer`} className="ev-nav-cta">
+            {locale === 'en' ? 'Get in touch' : 'Contactez-moi'}
+          </a>
+          <button className="ev-theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
+            {theme === 'light' ? (
+              <i className="bx bx-moon" />
+            ) : (
+              <i className="bx bx-sun" />
+            )}
+          </button>
           <button className="ev-lang-btn" onClick={switchLocale} aria-label="Switch language">
             <Image
               src={locale === 'en' ? 'https://flagcdn.com/w20/fr.png' : 'https://flagcdn.com/w20/gb.png'}

@@ -218,47 +218,6 @@ export default function PortfolioPage() {
             </div>
           </div>
         </section>
-
-        {/* ── CONTACT ── */}
-        <section id="contact" className="ev-section">
-          <div className="ev-container">
-            <div className="ev-section-header">
-              <span className="ev-label">{t('contact.eyebrow')}</span>
-              <h2>{t('contact.title')}</h2>
-              <p>{t('contact.description')}</p>
-            </div>
-            <div className="ev-contact-grid">
-              <a href="mailto:robertscresswell@gmail.com" className="ev-contact-card">
-                <i className="bi bi-envelope" />
-                <div>
-                  <strong>Email</strong>
-                  <span>robertscresswell@gmail.com</span>
-                </div>
-              </a>
-              <a href="tel:+250789492390" className="ev-contact-card">
-                <i className="bi bi-phone" />
-                <div>
-                  <strong>Phone</strong>
-                  <span>+250 789 492 390</span>
-                </div>
-              </a>
-              <a href="tel:+250789438711" className="ev-contact-card">
-                <i className="bi bi-phone" />
-                <div>
-                  <strong>Phone</strong>
-                  <span>+250 789 438 711</span>
-                </div>
-              </a>
-              <a href="https://wa.me/250789492390" target="_blank" rel="noopener noreferrer" className="ev-contact-card">
-                <i className="bi bi-whatsapp" />
-                <div>
-                  <strong>WhatsApp</strong>
-                  <span>+250 789 492 390</span>
-                </div>
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
