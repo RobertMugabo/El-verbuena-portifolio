@@ -156,19 +156,19 @@ export const services = [
   {
     key: "bookcover",
     href: "/work/bookcover",
-    image: "/assets/img/BeyondKnowledge_Book_Mockup_2.jpg",
-    heroImage: "/assets/img/BeyondKnowledge_Book_Mockup_2.jpg",
-    samples: ["/assets/img/BeyondKnowledge_Book_Mockup_2.jpg"],
-    gallery: ["/assets/img/BeyondKnowledge_Book_Mockup_2.jpg"],
+    image: "/assets/img/bookcover.jpg",
+    heroImage: "/assets/img/book category background.png",
+    samples: ["/assets/img/bookcover.jpg"],
+    gallery: ["/assets/img/bookcover.jpg"],
     details: []
   },
   {
     key: "motion",
     href: "/work/motion",
-    image: "/assets/img/Golden Ink_5.mp4",
-    heroImage: "/assets/img/Golden Ink_5.mp4",
-    samples: ["/assets/img/Golden Ink_5.mp4"],
-    gallery: ["/assets/img/Golden Ink_5.mp4"],
+    image: "/assets/img/My intro.mp4",
+    heroImage: "/assets/img/My intro.mp4",
+    samples: ["/assets/img/Golden Ink_5.mp4", "/assets/img/Final RPL composition video.mp4"],
+    gallery: ["/assets/img/Golden Ink_5.mp4", "/assets/img/Final RPL composition video.mp4"],
     details: [],
     isVideo: true
   }
