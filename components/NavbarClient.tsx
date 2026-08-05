@@ -8,9 +8,10 @@ import { IconMoon, IconSun } from './Icons';
 interface NavbarClientProps {
   locale: string;
   onMenuToggle: (isOpen: boolean) => void;
+  showHamburger?: boolean;
 }
 
-export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps) {
+export default function NavbarClient({ locale, onMenuToggle, showHamburger = true }: NavbarClientProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,10 +23,10 @@ export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps
   }, []);
 
   const toggleTheme = () => {
-    const next = theme === 'light' ? 'dark' : 'light';
-    setTheme(next);
-    localStorage.setItem('theme', next);
-    document.documentElement.setAttribute('data-theme', next);
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
   };
 
   const switchLocale = () => {
@@ -34,9 +35,9 @@ export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps
   };
 
   const toggleMenu = () => {
-    const next = !menuOpen;
-    setMenuOpen(next);
-    onMenuToggle(next);
+    const newState = !menuOpen;
+    setMenuOpen(newState);
+    onMenuToggle(newState);
   };
 
   return (
@@ -54,9 +55,11 @@ export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps
         />
         <span>{locale === 'en' ? 'FR' : 'EN'}</span>
       </button>
-      <button className="ev-hamburger" onClick={toggleMenu} aria-label="Toggle menu">
-        <span /><span /><span />
-      </button>
+      {showHamburger && (
+        <button className="ev-hamburger" onClick={toggleMenu} aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
+      )}
       {menuOpen && <div className="ev-nav-overlay" onClick={toggleMenu} />}
     </>
   );

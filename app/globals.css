@@ -145,6 +145,23 @@ u, .underline { text-decoration: underline; }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  position: relative;
+}
+@media (max-width: 480px) {
+  .ev-header-inner { padding: 12px 16px; }
+}
+.ev-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+@media (max-width: 768px) {
+  .ev-header-controls { display: none; }
+  .ev-hamburger { display: flex; }
+}
+@media (max-width: 375px) {
+  .ev-hamburger { padding: 8px; min-width: 40px; min-height: 40px; }
+  .ev-hamburger span { width: 20px; }
 }
 .ev-logo {
   display: flex;
@@ -243,6 +260,7 @@ u, .underline { text-decoration: underline; }
   min-height: 44px;
   z-index: 1001;
   -webkit-tap-highlight-color: transparent;
+  position: relative;
 }
 .ev-hamburger span {
   display: block;
@@ -250,21 +268,15 @@ u, .underline { text-decoration: underline; }
   height: 2px;
   background: var(--text);
   border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.ev-nav-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-  z-index: 998;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .ev-hamburger { display: flex; }
   .ev-nav {
     display: none;
     position: fixed;
-    top: 77px; left: 0; right: 0;
+    top: 70px; left: 0; right: 0;
     background: var(--bg);
     flex-direction: column;
     align-items: stretch;
@@ -277,6 +289,25 @@ u, .underline { text-decoration: underline; }
   .ev-nav.open { display: flex; }
   .ev-nav a { padding: 12px 16px; font-size: 15px; }
   .ev-nav-cta { margin-top: 8px; text-align: center; }
+  .ev-nav-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+  .ev-nav-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+  }
+  .ev-header-actions { display: none; }
+}
+@media (max-width: 375px) {
+  .ev-hamburger { padding: 8px; min-width: 40px; min-height: 40px; }
+  .ev-hamburger span { width: 20px; }
 }
 
 /* ── HERO ── */

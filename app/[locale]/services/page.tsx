@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { Metadata } from 'next';
+import { services } from '@/lib/portfolio-data';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -12,7 +13,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'HomePage' });
-  
+
   return {
     title: locale === 'fr'
       ? 'Services | EL-VERBUENA - Designer Graphique & UI'
@@ -22,15 +23,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       : 'Discover EL-VERBUENA design services: logo design, business cards, flyers, covers, UI design, and packaging for businesses and artists.',
   };
 }
-
-const services = [
-  { key: 'logo', img: '/assets/img/EV.jpg', route: 'work/logo' },
-  { key: 'cards', img: '/assets/img/forbusiness.jpg', route: 'work/cards' },
-  { key: 'flyers', img: '/assets/img/forflyer.png', route: 'work/flyers' },
-  { key: 'covers', img: '/assets/img/song.png', route: 'work/covers' },
-  { key: 'uiux', img: '/assets/img/home.jpg', route: 'work/uiux' },
-  { key: 'package', img: '/assets/img/pack.png', route: 'work/package' },
-];
 
 export default async function ServicesPage({ params }: Props) {
   const { locale } = await params;
@@ -46,25 +38,36 @@ export default async function ServicesPage({ params }: Props) {
           <p>{t('services.description')}</p>
         </div>
         <div className="ev-services-grid">
-          {services.map(({ key, img, route }, i) => (
-            <Link key={key} href={`/${locale}/${route}`} className="ev-service-card" prefetch={false}>
+          {services.map((service) => (
+            <Link key={service.key} href={`/${locale}${service.href}`} className="ev-service-card" prefetch={false}>
               <div className="ev-service-img-wrap">
-                <Image 
-                  src={img} 
-                  alt={t(`services.items.${key}.title` as any)} 
-                  width={400} 
-                  height={280} 
-                  className="ev-service-img"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw,400px"
-                />
+                {(service as any).isVideo ? (
+                  <video
+                    src={service.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
+                ) : (
+                  <Image
+                    src={service.image}
+                    alt={t(`services.items.${service.key}.title` as any)}
+                    width={400}
+                    height={280}
+                    className="ev-service-img"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw,400px"
+                  />
+                )}
                 <div className="ev-service-overlay">
                   <span>{locale === 'en' ? 'View Work →' : 'Voir les projets →'}</span>
                 </div>
               </div>
               <div className="ev-service-body">
-                <h3>{t(`services.items.${key}.title` as any)}</h3>
-                <p>{t(`services.items.${key}.description` as any)}</p>
+                <h3>{t(`services.items.${service.key}.title` as any)}</h3>
+                <p>{t(`services.items.${service.key}.description` as any)}</p>
               </div>
             </Link>
           ))}
