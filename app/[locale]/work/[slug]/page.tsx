@@ -38,7 +38,7 @@ export default async function WorkCategoryPage({ params }: Props) {
   const title = t(`services.items.${service.key}.title` as any);
   const desc = t(`services.items.${service.key}.description` as any);
 
-  const galleryItems = service.details.length > 0 ? service.details : service.gallery.map((img) => ({ image: img, title: '', description: '' }));
+  const galleryItems = service.details.length > 0 ? service.details : service.gallery.filter((img) => img !== service.heroImage).map((img) => ({ image: img, title: '', description: '' }));
   const otherServices = services.filter((s) => s.key !== service.key);
   const isVideoCategory = (service as any).isVideo;
 
