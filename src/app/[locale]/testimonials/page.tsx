@@ -38,7 +38,7 @@ export default async function TestimonialsPage({ params }: Props) {
         <div className="ev-testimonials-grid">
           <div className="ev-testimonial-card">
             <IconQuote size={32} className="ev-quote-icon" />
-            <p>"{t('testimonials.items.rogerQuote')}"</p>
+            <p>&ldquo;{t('testimonials.items.rogerQuote')}&rdquo;</p>
             <div className="ev-testimonial-author">
               <strong>IZERE HIRWA Roger</strong>
               <span>{t('testimonials.items.rogerRole')}</span>
@@ -46,7 +46,7 @@ export default async function TestimonialsPage({ params }: Props) {
           </div>
           <div className="ev-testimonial-card">
             <IconQuote size={32} className="ev-quote-icon" />
-            <p>"{t('testimonials.items.felixQuote')}"</p>
+            <p>&ldquo;{t('testimonials.items.felixQuote')}&rdquo;</p>
             <div className="ev-testimonial-author">
               <strong>UWAYEZU Jean Felix</strong>
               <span>{t('testimonials.items.felixRole')}</span>
