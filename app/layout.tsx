@@ -19,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={montserrat.variable}>
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="stylesheet"
           href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"

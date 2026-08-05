@@ -1,10 +1,11 @@
 'use client';
 
 import Image from 'next/image';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 export default function Footer() {
   const locale = useLocale();
+  const t = useTranslations('HomePage');
   const year = new Date().getFullYear();
 
   return (
@@ -13,11 +14,11 @@ export default function Footer() {
         <div className="ev-footer-brand">
           <Image src="/assets/img/logo-1.png" alt="EL-VERBUENA" width={36} height={36} />
           <span>EL-VERBUENA</span>
-          <p>Creative Graphic & UI Design</p>
-          <p>Based in Kigali, Rwanda</p>
+          <p>{t('footer.tagline')}</p>
+          <p>{t('footer.location')}</p>
         </div>
         <div className="ev-footer-contact">
-          <h4>Contact</h4>
+          <h4>{t('footer.contact')}</h4>
           <a href="mailto:robertscresswell@gmail.com">
             <i className="bi bi-envelope" />
             <span>robertscresswell@gmail.com</span>
@@ -36,7 +37,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="ev-footer-social">
-          <h4>Follow</h4>
+          <h4>{t('footer.follow')}</h4>
           <div className="ev-footer-social-links">
             <a href="https://x.com/el_verbuena" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <i className="bx bxl-twitter" />
@@ -53,17 +54,17 @@ export default function Footer() {
           </div>
         </div>
         <div className="ev-footer-quick">
-          <h4>Quick Links</h4>
+          <h4>{t('footer.quickLinks')}</h4>
           <div className="ev-footer-quick-links">
-            <a href={`/${locale}#about`}>About</a>
-            <a href={`/${locale}#services`}>Services</a>
-            <a href={`/${locale}#skills`}>Skills</a>
-            <a href={`/${locale}#testimonials`}>Testimonials</a>
+            <a href={`/${locale}/about`}>{t('nav.about')}</a>
+            <a href={`/${locale}/services`}>{t('nav.services')}</a>
+            <a href={`/${locale}/skills`}>{t('nav.skills')}</a>
+            <a href={`/${locale}/testimonials`}>{t('nav.testimonials')}</a>
           </div>
         </div>
       </div>
       <div className="ev-footer-bottom">
-        <p>© {year} All Rights Reserved</p>
+        <p>© {year} {t('footer.rights')}</p>
       </div>
     </footer>
   );

@@ -3,13 +3,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const t = useTranslations('HomePage');
   const locale = useLocale();
-  const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState('light');
@@ -31,21 +30,22 @@ export default function Navbar() {
     const next = locale === 'en' ? 'fr' : 'en';
     const segments = pathname.split('/');
     segments[1] = next;
-    router.push(segments.join('/'));
+    window.location.href = segments.join('/');
   };
 
   const navLinks = [
-    { href: `/${locale}#about`, label: t('nav.about') },
-    { href: `/${locale}#services`, label: t('nav.services') },
-    { href: `/${locale}#skills`, label: t('nav.skills') },
-    { href: `/${locale}#testimonials`, label: t('nav.testimonials') },
+    { href: `/${locale}`, label: t('nav.home') },
+    { href: `/${locale}/about`, label: t('nav.about') },
+    { href: `/${locale}/services`, label: t('nav.services') },
+    { href: `/${locale}/skills`, label: t('nav.skills') },
+    { href: `/${locale}/testimonials`, label: t('nav.testimonials') },
   ];
 
   return (
     <header className="ev-header">
       <div className="ev-header-inner">
-        <Link href={`/${locale}`} className="ev-logo">
-          <Image src="/assets/img/logo.png" alt="EL-VERBUENA" width={44} height={44} />
+        <Link href={`/${locale}`} className="ev-logo" prefetch>
+          <Image src="/assets/img/logo.png" alt="EL-VERBUENA" width={44} height={44} priority />
           <span>EL-VERBUENA</span>
         </Link>
 
@@ -55,8 +55,8 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href={`/#footer`} className="ev-nav-cta">
-            {locale === 'en' ? 'Get in touch' : 'Contactez-moi'}
+          <a href={`/${locale}#footer`} className="ev-nav-cta">
+            {t('nav.getInTouch')}
           </a>
           <button className="ev-theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
             {theme === 'light' ? (

@@ -1,5 +1,6 @@
 import type {ReactNode} from "react";
 import {notFound} from "next/navigation";
+import Image from "next/image";
 
 type GalleryItem = {
   image: string;
@@ -228,7 +229,7 @@ function SiteHeader({locale, homePage}: {locale: string; homePage: boolean}) {
     <header id="header" className="d-flex align-items-center">
       <div className="container d-flex justify-content-between">
         <div className="logo">
-          <img src="/assets/img/logo.png" alt="" />
+          <Image src="/assets/img/logo.png" alt="EL-VERBUENA logo" width={40} height={40} />
           &nbsp;&nbsp;
           <a href={homeHref}>EL-VERBUENA</a>
         </div>
@@ -328,7 +329,7 @@ function SiteFooter() {
         <div className="container d-md-flex py-4">
           <div className="me-md-auto text-center text-md-start">
             <div className="copyright">
-              &copy; Copyright <img src="/assets/img/logo-1.png" alt="EL-VERBUENA" style={{height: 30}} />{" "}
+              &copy; Copyright <Image src="/assets/img/logo-1.png" alt="EL-VERBUENA" width={30} height={30} style={{display:'inline'}} />{" "}
               <strong>
                 <span>EL-VERBUENA</span>
               </strong>
@@ -423,11 +424,11 @@ function WorkGrid({
         </div>
 
         <div className="row">
-          {items.map((item) => (
+          {items.map((item, i) => (
             <div key={item.image} className="col-lg-3 col-md-6 col-12 mb-4" data-aos="fade-up">
               <div className="member text-center">
                 <div className="member-img">
-                  <img src={item.image} className="img-fluid" alt={item.title ?? ""} />
+                  <Image src={item.image} className="img-fluid" alt={item.title ?? ""} width={300} height={300} loading={i < 4 ? 'eager' : 'lazy'} />
                 </div>
                 <div className="member-info">
                   {item.title ? <h4>{item.title}</h4> : null}
@@ -466,7 +467,7 @@ export function OriginalHomePage({locale}: {locale: string}) {
               <div className="col-lg-3 col-md-6 d-flex align-items-stretch">
                 <div className="member" data-aos="fade-up">
                   <div className="member-img">
-                    <img src="/assets/img/me.jpg" className="img-fluid" alt="" />
+                    <Image src="/assets/img/me.jpg" className="img-fluid" alt="MUGABO Robert" width={300} height={350} priority />
                     <div className="social">
                       <a href="https://x.com/el_verbuena" target="_blank" rel="noreferrer">
                         <i className="bi bi-twitter"></i>
@@ -545,7 +546,7 @@ export function OriginalHomePage({locale}: {locale: string}) {
                 <div key={service.href} className="col-lg-3 col-md-6 d-flex align-items-stretch">
                   <div className="member" data-aos="fade-up">
                     <div className="member-img">
-                      <img src={service.image} className="img-fluid" alt={service.title} />
+                      <Image src={service.image} className="img-fluid" alt={service.title} width={300} height={300} loading="lazy" />
                       <div className="social">
                         <a href={`/${locale}/work/${service.href}`}>
                           {service.title}
@@ -659,7 +660,7 @@ export function OriginalHomePage({locale}: {locale: string}) {
                 <div key={image} className="col-lg-3 col-md-6 col-12 mb-4" data-aos="fade-up">
                   <div className="member text-center">
                     <div className="member-img">
-                      <img src={image} className="img-fluid" alt="" />
+                      <Image src={image} className="img-fluid" alt="" width={300} height={300} loading="lazy" />
                     </div>
                   </div>
                 </div>
