@@ -42,15 +42,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const services = [
-  { key: 'logo', img: '/assets/img/EV.jpg', route: 'logo' },
-  { key: 'cards', img: '/assets/img/forbusiness.jpg', route: 'businesscard' },
-  { key: 'flyers', img: '/assets/img/forflyer.png', route: 'flyer' },
-  { key: 'covers', img: '/assets/img/song.png', route: 'songcovers' },
-  { key: 'uiux', img: '/assets/img/home.jpg', route: 'ui' },
-  { key: 'package', img: '/assets/img/pack.png', route: 'package' },
-];
-
 const recentWork = [
   { img: '/assets/img/Ibakwe-heroes-day-26.jpg', alt: 'Ibakwe Heroes Day' },
   { img: '/assets/img/Vex.jpg', alt: 'Vex' },
@@ -82,9 +73,8 @@ export default async function PortfolioPage({ params }: Props) {
         </div>
       </section>
 
-      <main>
-        {/* ── RECENT WORK ── */}
-        <section id="recent-work" className="ev-section ev-section-alt">
+      {/* ── RECENT WORK ── */}
+      <section id="recent-work" className="ev-section ev-section-alt">
           <div className="ev-container">
             <div className="ev-section-header">
               <span className="ev-label">{t('work.eyebrow')}</span>
@@ -112,7 +102,6 @@ export default async function PortfolioPage({ params }: Props) {
             </div>
           </div>
         </section>
-      </main>
 
       <a href="#" className="ev-back-top" aria-label="Back to top">
         <IconArrowUp size={22} />

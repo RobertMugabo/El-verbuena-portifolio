@@ -24,12 +24,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const services = [
-  { key: 'logo', img: '/assets/img/EV.jpg', route: 'logo' },
-  { key: 'cards', img: '/assets/img/forbusiness.jpg', route: 'businesscard' },
-  { key: 'flyers', img: '/assets/img/forflyer.png', route: 'flyer' },
-  { key: 'covers', img: '/assets/img/song.png', route: 'songcovers' },
-  { key: 'uiux', img: '/assets/img/home.jpg', route: 'ui' },
-  { key: 'package', img: '/assets/img/pack.png', route: 'package' },
+  { key: 'logo', img: '/assets/img/EV.jpg', route: 'work/logo' },
+  { key: 'cards', img: '/assets/img/forbusiness.jpg', route: 'work/cards' },
+  { key: 'flyers', img: '/assets/img/forflyer.png', route: 'work/flyers' },
+  { key: 'covers', img: '/assets/img/song.png', route: 'work/covers' },
+  { key: 'uiux', img: '/assets/img/home.jpg', route: 'work/uiux' },
+  { key: 'package', img: '/assets/img/pack.png', route: 'work/package' },
 ];
 
 export default async function ServicesPage({ params }: Props) {
