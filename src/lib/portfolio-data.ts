@@ -156,7 +156,7 @@ export const services = [
   {
     key: "bookcover",
     href: "/work/bookcover",
-    image: "/assets/img/bookcover.jpg",
+    image: "/assets/img/book category background.png",
     heroImage: "/assets/img/book category background.png",
     samples: ["/assets/img/bookcover.jpg"],
     gallery: ["/assets/img/bookcover.jpg"],
