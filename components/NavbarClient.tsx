@@ -7,9 +7,10 @@ import { IconMoon, IconSun } from './Icons';
 
 interface NavbarClientProps {
   locale: string;
+  onMenuToggle: (isOpen: boolean) => void;
 }
 
-export default function NavbarClient({ locale }: NavbarClientProps) {
+export default function NavbarClient({ locale, onMenuToggle }: NavbarClientProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -32,6 +33,12 @@ export default function NavbarClient({ locale }: NavbarClientProps) {
     router.replace(pathname, { locale: next });
   };
 
+  const toggleMenu = () => {
+    const newState = !menuOpen;
+    setMenuOpen(newState);
+    onMenuToggle(newState);
+  };
+
   return (
     <>
       <button className="ev-theme-btn" onClick={toggleTheme} aria-label="Toggle theme">
@@ -47,10 +54,10 @@ export default function NavbarClient({ locale }: NavbarClientProps) {
         />
         <span>{locale === 'en' ? 'FR' : 'EN'}</span>
       </button>
-      <button className="ev-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+      <button className="ev-hamburger" onClick={toggleMenu} aria-label="Toggle menu">
         <span /><span /><span />
       </button>
-      {menuOpen && <div className="ev-nav-overlay" onClick={() => setMenuOpen(false)} />}
+      {menuOpen && <div className="ev-nav-overlay" onClick={toggleMenu} />}
     </>
   );
 }

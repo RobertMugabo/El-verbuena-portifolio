@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import NavbarClient from './NavbarClient';
@@ -17,6 +20,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({ locale, translations }: NavbarProps) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navLinks = [
     { href: `/${locale}`, label: translations.nav.home },
     { href: `/${locale}/about`, label: translations.nav.about },
@@ -33,7 +37,7 @@ export default function Navbar({ locale, translations }: NavbarProps) {
           <span>EL-VERBUENA</span>
         </Link>
 
-        <nav className="ev-nav">
+        <nav className={`ev-nav ${menuOpen ? 'open' : ''}`}>
           {navLinks.map(link => (
             <Link key={link.href} href={link.href}>
               {link.label}
@@ -42,7 +46,7 @@ export default function Navbar({ locale, translations }: NavbarProps) {
           <a href={`/${locale}#footer`} className="ev-nav-cta">
             {translations.nav.getInTouch}
           </a>
-          <NavbarClient locale={locale} />
+          <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
         </nav>
       </div>
     </header>
