@@ -46,11 +46,18 @@ export default function Navbar({ locale, translations }: NavbarProps) {
           <a href={`/${locale}#footer`} className="ev-nav-cta" onClick={() => setMenuOpen(false)}>
             {translations.nav.getInTouch}
           </a>
+          <div className="ev-nav-controls">
+            <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
+          </div>
         </nav>
 
         <div className="ev-header-controls">
           <NavbarClient locale={locale} onMenuToggle={setMenuOpen} />
         </div>
+
+        <button className="ev-hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
       </div>
       {menuOpen && <div className="ev-nav-overlay" onClick={() => setMenuOpen(false)} />}
     </header>
